@@ -1,0 +1,84 @@
+
+/*Slider Section Styling start*/
+.overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 3;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slides-navigation {
+	z-index: 6;
+}
+
+.slides-navigation .next,
+.slides-navigation .prev {
+	width: 2em;
+	height: 2em;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.slides-navigation a.next {
+	background-image: url(../img/icons/next.png);
+	right: 1em;
+}
+
+.slides-navigation a.prev {
+	background-image: url(../img/icons/prev.png);
+	left: 1em;
+}
+
+.title-part {
+	width: 100%;
+	top: 35%;
+	position: absolute;
+	z-index: 6;
+	text-align: center;
+}
+
+.title-part p {
+	letter-spacing: .2em;
+	color: #fff;
+	text-shadow: 0 .05em 0.08em rgba(0,0,0,0.5);
+}
+
+.title-part .name {
+	font-size: 2.2em;
+}
+
+.title-part .title {
+	font-size: 1em;
+}
+
+/*Sliding section Style End*/
+
+
+/*About section Styling Start*/
+
+.section-padding {
+	padding: 2em 0;
+}
+
+.profile-img {
+	width: 100%;
+	border-radius: 5%;
+	height: 20em;
+}
+
+.about-details {
+	font-size: 1.2em;
+	letter-spacing: .05em;
+	line-height: 2em;
+}
+
+/*About section Styling End*/
+
+
+
+/*Skills section Styling Start*/
+
+.skills-section {
+	background-color: #16a085;
+}
