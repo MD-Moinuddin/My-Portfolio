@@ -29,7 +29,7 @@ $(document).ready(function() {
 	            items:4
 	        }
 	    }
-	})
+	});
 
 	$('.chart').easyPieChart({
         easing: 'easeInOut',
