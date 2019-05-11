@@ -81,4 +81,34 @@
 
 .skills-section {
 	background-color: #16a085;
+	color: #fff;
+}
+
+.skill {
+	text-align: center;
+	padding: 0 1em;
+}
+
+.chart {
+	position: relative;
+	width: 152px;
+	height: 152px;
+	text-align: center;
+	display: inline-block;
+}
+
+.chart canvas {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.percent {
+	line-height: 152px;
+	font-size: 2em;
+	color: #1e1e1e;
+}
+
+.percent:after {
+	content: "%";
 }

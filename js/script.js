@@ -36,7 +36,7 @@ $(document).ready(function() {
         barColor: '#fff',
         trackColor: false,
         scaleColor: false,
-        size: '157',
+        size: '152',
         onStep: function(from, to, percent) {
         	$(this.el).find('.percent').text(Math.round(percent));
         }
