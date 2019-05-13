@@ -69,7 +69,7 @@ html {
 }
 
 .my-navbar {
-	background-color: #077a63 !important;
+	background-color: #16a085 !important;
 }
 
 .my-navmenu-items a {
@@ -121,6 +121,10 @@ html {
 	padding: 0 1em;
 }
 
+.skill h4 {
+	margin-top: 1em;
+}
+
 .chart {
 	position: relative;
 	width: 152px;
@@ -138,7 +142,8 @@ html {
 .percent {
 	line-height: 152px;
 	font-size: 2em;
-	color: #1e1e1e;
+	color: #fff;
+	font-weight: 600;
 }
 
 .percent:after {
@@ -288,9 +293,9 @@ html {
 
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 938px) {
 	.slides-container img {
-		height: 400px;
+		height: 80%;
 		width: 100%;
 		background-image: cover;
 	}
