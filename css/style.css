@@ -278,3 +278,25 @@ html {
 	padding: .2em;
 }
 /*Contact Section Styling End*/
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 480px) {
+	.slides-container img {
+		height: 400px;
+		width: 100%;
+		background-image: cover;
+	}
+
+	.mobile, .mail {
+		display: block;
+		padding: .2em;
+	}
+}
