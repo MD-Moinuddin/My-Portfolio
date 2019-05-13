@@ -112,3 +112,23 @@
 .percent:after {
 	content: "%";
 }
+
+/*over-ride own nav*/
+.owl-nav {
+	display: flex;
+	justify-content: center;
+	margin-top: 1em;
+}
+
+.owl-carousel .owl-nav button.owl-next, 
+.owl-carousel .owl-nav button.owl-prev {
+	padding: 0 .2em !important;
+    font-size: 2em;
+    margin: 0 .5em;
+    line-height: 1em;
+}
+
+.owl-carousel .owl-nav button.owl-next, 
+.owl-carousel .owl-nav button.owl-prev:focus {
+	outline: 0;
+} 
