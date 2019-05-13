@@ -22,13 +22,13 @@ $(document).ready(function() {
 	            items:1
 	        },
 	        480:{
-	            items:1
-	        },
-	        768:{
 	            items:2
 	        },
-	        938:{
+	        768:{
 	            items:3
+	        },
+	        938:{
+	            items:4
 	        }
 	    }
 	});

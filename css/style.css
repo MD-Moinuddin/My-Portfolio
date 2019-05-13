@@ -132,3 +132,55 @@
 .owl-carousel .owl-nav button.owl-prev:focus {
 	outline: 0;
 } 
+
+/*Skills Section end*/
+
+
+
+/*Stats Section Start*/
+.stats {
+	margin: 2em;
+}
+
+.stats-icon i {
+	font-size: 4em;
+	position: absolute;
+	top: 0;
+	left: 44%;
+	color: #16a085;
+}
+
+.stats-details {
+	border: 1px solid #444;
+	padding: 5em 0;
+	border-top: 0;
+	position: relative;
+}
+
+
+.stats-details:after,
+.stats-details:before {
+	content: "";
+	width: 30%;
+	position: absolute;
+	border-bottom: 1px solid #444;	
+	top: 0;
+}	
+
+.stats-details:after {
+	right: 0;
+}
+
+.stats-details:before {
+	left: 0;
+}
+
+.stats-details h2 {
+	font-size: 3em;
+	color: #16a085;
+	font-weight: 400;
+}
+
+.stats-details h4 {
+	font-size: 1em;
+}
