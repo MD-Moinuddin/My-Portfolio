@@ -1,4 +1,6 @@
-
+html {
+	scroll-behavior: smooth;
+}
 /*Slider Section Styling start*/
 .overlay {
 	width: 100%;
@@ -53,6 +55,36 @@
 }
 
 /*Sliding section Style End*/
+
+
+
+/*STyling Navbar Scetion Start*/
+
+.navbar-toggler-icon {
+	background-image: url(../img/icons/menu.png);
+}
+
+.navbar-toggler:focus {
+	outline: 0;
+}
+
+.my-navbar {
+	background-color: #077a63 !important;
+}
+
+.my-navmenu-items a {
+	color: #fff;
+	text-transform: uppercase;
+}
+
+#navbar {
+	z-index: 10;
+	position: sticky;
+	top: 0;
+}
+
+
+/*STyling Navbar Scetion End*/
 
 
 /*About section Styling Start*/
@@ -185,3 +217,64 @@
 .stats-details h4 {
 	font-size: 1em;
 }
+
+
+/*Contact Section Styling Start*/
+
+
+.contact-section {
+	background: #f0ead77a;
+}
+
+.contact-header h2 {
+	color: #c66767;
+	font-weight: 500;
+}
+
+.contact-header p {
+	font-size: 1.5em;
+	color: #817272;
+}
+
+.contact-social {
+	text-align: center;
+}
+
+.contact-social ul {
+	padding-left: 0;
+}
+
+.contact-social ul li {
+	display: inline-block;
+	padding: .6em 1em;
+	border: 1px solid #16a085;
+	border-radius: 50%;
+	margin: 1em;
+}
+
+.contact-social ul li a {
+	font-size: 1.5em;
+	color: #16a085;
+}
+
+.contact-social ul li:hover {
+	background-color: #16a085;
+}
+
+.contact-social ul li:hover a {
+	color: #fff;
+}
+
+.cell {
+	text-align: center;
+}
+
+.mobile, .mail {
+	padding: 1em;
+	color: #888484;
+}
+
+.mobile i, .mail i {
+	padding: .2em;
+}
+/*Contact Section Styling End*/
