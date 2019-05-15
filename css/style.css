@@ -411,4 +411,10 @@ html {
 		display: block;
 		padding: .2em;
 	}
+
+	.overlay-btn {
+		margin: 26% auto;
+		padding: 0.4em 1em;
+		font-size: .8em;
+	}
 }
