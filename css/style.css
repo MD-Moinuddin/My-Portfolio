@@ -224,8 +224,115 @@ html {
 }
 
 
-/*Contact Section Styling Start*/
 
+/*Project demo Styling start*/
+
+.project-demo-section {
+	background-color: #f1e7fe;
+}
+
+.project-demo-header {
+	width: 100%;
+	text-align: center;
+}
+
+.project-part {
+	padding: 1em 0;
+}
+
+.demo-img {
+	width: 100%;
+	height: 15em;
+	margin: .5em 0;
+	cursor: pointer;
+	position: relative;
+	opacity: 1;
+}
+
+
+
+.img-overlay {
+	width: 95%;
+	background-color: #16a085;
+	height: 0;
+	position: absolute;
+	top: 0;
+	left: 2.5%;
+	opacity: 0;
+	margin: 0.5em 0;
+	border-radius: .5em;
+	transition: height 0.5s ease;
+}
+
+.overlay-btn {
+	margin: 36% auto;
+	display: block;
+	background-color: #2fbf87;
+	color: #fff; 
+	opacity: 0;
+	transition: 0.4s;
+	border: 0;
+	transition: 0.5s ease;
+	border-radius: 2em;
+	padding: .5em 2em;
+}
+
+.overlay-btn:hover {
+	background-color: #fff;
+	color: #16a085;
+}
+
+.overlay-container:hover .img-overlay {
+	opacity: 0.95;
+	height: 15em;
+}
+
+.overlay-container:hover .overlay-btn {
+	opacity: 1;
+}
+
+.overlay-btn:focus {
+	outline: 0;
+}
+
+.project-details h4 {
+	font-size: 1.2em;
+	color: #444;
+	font-style: italic;
+}
+
+.project-details p {
+	color: #444;
+	font-size: 0.8em;
+}
+
+.live-demo-btn {
+	padding: .8em 3em;
+	background-color: #16a085;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 2em;
+}
+
+.live-demo-btn:hover {
+	background-color: #2fbf87;
+	color: #fff;
+}
+
+.live-demo-btn:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+.modal-img {
+	width: 100%;
+}
+
+/*Project demo Styling End*/
+
+
+
+/*Contact Section Styling Start*/
 
 .contact-section {
 	background: #f0ead77a;
