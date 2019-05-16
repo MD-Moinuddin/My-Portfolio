@@ -317,11 +317,7 @@ html {
 .live-demo-btn:hover {
 	background-color: #2fbf87;
 	color: #fff;
-}
-
-.live-demo-btn:hover {
 	text-decoration: none;
-	color: #fff;
 }
 
 .modal-img {
