@@ -1,6 +1,11 @@
 html {
 	scroll-behavior: smooth;
 }
+
+body {
+	font-family: 'Roboto Slab', serif;
+}
+
 /*Slider Section Styling start*/
 .overlay {
 	width: 100%;
@@ -41,13 +46,14 @@ html {
 }
 
 .title-part p {
-	letter-spacing: .2em;
+	letter-spacing: .1em;
 	color: #fff;
 	text-shadow: 0 .05em 0.08em rgba(0,0,0,0.5);
 }
 
 .title-part .name {
-	font-size: 2.2em;
+	font-size: 2.5em;
+	font-weight: 500;
 }
 
 .title-part .title {
@@ -69,7 +75,28 @@ html {
 }
 
 .my-navbar {
-	background-color: #16a085 !important;
+	background-color: #000000 !important;
+	box-shadow: 0 2px 6px 0 rgb(35 35 35 / 82%);
+}
+
+.my-navbar .navbar-collapse {
+	justify-content: center;
+}
+
+/* .logo {
+	padding: 0;
+} */
+
+.logo img {
+	width: 150px;
+}
+
+@media (min-width: 992px) {
+	.navbar-expand-lg .navbar-nav .nav-link {
+		padding-right: 1em;
+		padding-left: 1em;
+		margin-right: 1em;
+	}
 }
 
 .my-navmenu-items a {
@@ -94,15 +121,19 @@ html {
 }
 
 .profile-img {
-	width: 100%;
+	/* width: 100%;
 	border-radius: 5%;
-	height: 20em;
+	height: 20em; */
+	width: 300px;
+    border-radius: 50%;
+    height: 300px;
 }
 
 .about-details {
-	font-size: 1.2em;
-	letter-spacing: .05em;
-	line-height: 2em;
+	font-size: 1em;
+    letter-spacing: 0;
+    /* line-height: 2em; */
+	text-align: justify;
 }
 
 /*About section Styling End*/
@@ -112,7 +143,7 @@ html {
 /*Skills section Styling Start*/
 
 .skills-section {
-	background-color: #16a085;
+	background-color: #000000;
 	color: #fff;
 }
 
@@ -184,7 +215,7 @@ html {
     position: absolute;
     top: 0;
     left: 30%;
-    color: #16a085;
+    color: #000000;
     font-size: 3em;
 }
 
@@ -215,7 +246,7 @@ html {
 
 .stats-details h2 {
 	font-size: 3em;
-	color: #16a085;
+	color: #000000;
 	font-weight: 400;
 }
 
@@ -228,12 +259,13 @@ html {
 /*Project demo Styling start*/
 
 .project-demo-section {
-	background-color: #f1e7fe;
+	background-color: #000000;
 }
 
 .project-demo-header {
 	width: 100%;
 	text-align: center;
+	color: #ffffff;
 }
 
 .project-part {
@@ -252,12 +284,12 @@ html {
 
 
 .img-overlay {
-	width: 95%;
-	background-color: #16a085;
+	width: 91%;
+	background-color: #ffffff;
 	height: 0;
 	position: absolute;
 	top: 0;
-	left: 2.5%;
+	left: 4.5%;
 	opacity: 0;
 	margin: 0.5em 0;
 	border-radius: .5em;
@@ -267,8 +299,8 @@ html {
 .overlay-btn {
 	margin: 36% auto;
 	display: block;
-	background-color: #2fbf87;
-	color: #fff; 
+	background-color: #ffffff;
+	color: #000000; 
 	opacity: 0;
 	transition: 0.4s;
 	border: 0;
@@ -277,10 +309,10 @@ html {
 	padding: .5em 2em;
 }
 
-.overlay-btn:hover {
+/* .overlay-btn:hover {
 	background-color: #fff;
-	color: #16a085;
-}
+	color: #000000;
+} */
 
 .overlay-container:hover .img-overlay {
 	opacity: 0.95;
@@ -289,7 +321,14 @@ html {
 
 .overlay-container:hover .overlay-btn {
 	opacity: 1;
+	color: #ffffff;
+    background-color: #000000;
+    border-color: #000000;
 }
+
+/* .overlay-btn:hover {
+	
+} */
 
 .overlay-btn:focus {
 	outline: 0;
@@ -297,28 +336,28 @@ html {
 
 .project-details h4 {
 	font-size: 1.2em;
-	color: #444;
+	color: #ffffff;
 	font-style: italic;
 }
 
 .project-details p {
-	color: #444;
+	color: #ffffff;
 	font-size: 0.8em;
 }
 
 .live-demo-btn {
 	padding: .5em 2em;
-	background-color: #16a085;
-	color: #fff;
+	background-color: #ffffff;
+	color: #000000;
 	text-decoration: none;
 	border-radius: 2em;
 }
 
-.live-demo-btn:hover {
+/* .live-demo-btn:hover {
 	background-color: #2fbf87;
 	color: #fff;
 	text-decoration: none;
-}
+} */
 
 .modal-img {
 	width: 100%;
@@ -335,13 +374,13 @@ html {
 }
 
 .contact-header h2 {
-	color: #c66767;
-	font-weight: 500;
+	color: #000000;
+	font-weight: 600;
 }
 
 .contact-header p {
-	font-size: 1.5em;
-	color: #817272;
+	font-size: 1.2em;
+	color: #000000;
 }
 
 .contact-social {
@@ -355,18 +394,18 @@ html {
 .contact-social ul li {
 	display: inline-block;
 	padding: .6em 1em;
-	border: 1px solid #16a085;
+	border: 1px solid #000000;
 	border-radius: 50%;
 	margin: 1em;
 }
 
 .contact-social ul li a {
 	font-size: 1.5em;
-	color: #16a085;
+	color: #000000;
 }
 
 .contact-social ul li:hover {
-	background-color: #16a085;
+	background-color: #000000;
 }
 
 .contact-social ul li:hover a {
@@ -379,7 +418,7 @@ html {
 
 .mobile, .mail {
 	padding: 1em;
-	color: #888484;
+	color: #000000;
 }
 
 .mobile i, .mail i {
