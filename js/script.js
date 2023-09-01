@@ -5,7 +5,7 @@ $(document).ready(function() {
 	});
 
 	var typed = new Typed(".typed", {
-		strings: ["Graduated from Computer Science", "UI/UX Engineer", "Software Engineer(Front End)", "Web Designer"],
+		strings: ["Doing masters in International Software System Science", "Software Engineer(Front End)", "UI/UX Engineer", "Web Designer"],
 		typeSpeed: 60,
 		startDelay: 1000,
 		showCursor: false,
