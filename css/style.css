@@ -47,7 +47,7 @@ body {
 
 .title-part p {
 	letter-spacing: .1em;
-	color: #fff;
+	color: #F8ED17;
 	text-shadow: 0 .05em 0.08em rgba(0,0,0,0.5);
 }
 
@@ -100,8 +100,8 @@ body {
 }
 
 .my-navmenu-items a {
-	color: #fff;
-	text-transform: uppercase;
+	color: #F8ED17;
+	/* text-transform: uppercase; */
 }
 
 #navbar {
@@ -144,7 +144,7 @@ body {
 
 .skills-section {
 	background-color: #000000;
-	color: #fff;
+	color: #F8ED17;
 }
 
 .skill {
@@ -173,7 +173,7 @@ body {
 .percent {
 	line-height: 152px;
 	font-size: 2em;
-	color: #fff;
+	color: #F8ED17;
 	font-weight: 600;
 }
 
@@ -265,7 +265,7 @@ body {
 .project-demo-header {
 	width: 100%;
 	text-align: center;
-	color: #ffffff;
+	color: #F8ED17;
 }
 
 .project-part {
@@ -285,7 +285,7 @@ body {
 
 .img-overlay {
 	width: 91%;
-	background-color: #ffffff;
+	background-color: #F8ED17;
 	height: 0;
 	position: absolute;
 	top: 0;
@@ -315,13 +315,13 @@ body {
 } */
 
 .overlay-container:hover .img-overlay {
-	opacity: 0.95;
+	opacity: 0.96;
 	height: 15em;
 }
 
 .overlay-container:hover .overlay-btn {
 	opacity: 1;
-	color: #ffffff;
+	color: #F8ED17;
     background-color: #000000;
     border-color: #000000;
 }
@@ -336,28 +336,28 @@ body {
 
 .project-details h4 {
 	font-size: 1.2em;
-	color: #ffffff;
-	font-style: italic;
+	color: #F8ED17;
+	/* font-style: italic; */
 }
 
 .project-details p {
-	color: #ffffff;
+	color: #F8ED17;
 	font-size: 0.8em;
 }
 
 .live-demo-btn {
 	padding: .5em 2em;
-	background-color: #ffffff;
+	background-color: #F8ED17;
 	color: #000000;
 	text-decoration: none;
 	border-radius: 2em;
 }
 
-/* .live-demo-btn:hover {
-	background-color: #2fbf87;
-	color: #fff;
+.live-demo-btn:hover {
+	background-color: #F8ED17;
+	color: #000000;
 	text-decoration: none;
-} */
+}
 
 .modal-img {
 	width: 100%;
@@ -370,7 +370,7 @@ body {
 /*Contact Section Styling Start*/
 
 .contact-section {
-	background: #fcf2f282;
+	background: #FFFFFF;
 }
 
 .contact-header h2 {
@@ -392,11 +392,13 @@ body {
 }
 
 .contact-social ul li {
+	height: 40px;
+    width: 40px;
 	display: inline-block;
-	padding: .6em 1em;
+	/* padding: .6em 1em; */
 	border: 1px solid #000000;
 	border-radius: 50%;
-	margin: 1em;
+	margin: 1em 0.5em;
 }
 
 .contact-social ul li a {
@@ -409,7 +411,7 @@ body {
 }
 
 .contact-social ul li:hover a {
-	color: #fff;
+	color: #F8ED17;
 }
 
 .cell {
