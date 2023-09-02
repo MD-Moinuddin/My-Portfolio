@@ -3,7 +3,8 @@ html {
 }
 
 body {
-	font-family: 'Roboto Slab', serif;
+	/* font-family: 'Roboto Slab', serif; */
+	font-family: 'Montserrat', sans-serif;
 }
 
 /*Slider Section Styling start*/
@@ -127,6 +128,7 @@ body {
 	width: 300px;
     border-radius: 50%;
     height: 300px;
+	filter: saturate(.4);
 }
 
 .about-details {
