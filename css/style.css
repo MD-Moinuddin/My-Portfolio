@@ -7,6 +7,23 @@ body {
 	font-family: 'Montserrat', sans-serif;
 }
 
+.btn-primary {
+	background-color: #000000;
+	color: #F8ED17;
+	outline: none;
+	border-color: #000000;
+}
+
+.btn-primary:hover {
+	outline: none;
+	background-color: #000000;
+	color: #F8ED17;
+}
+
+.btn-primary:focus {
+	outline: none;
+}
+
 /*Slider Section Styling start*/
 .overlay {
 	width: 100%;
@@ -319,6 +336,7 @@ body {
 .overlay-container:hover .img-overlay {
 	opacity: 0.96;
 	height: 15em;
+	text-align: center;
 }
 
 .overlay-container:hover .overlay-btn {
