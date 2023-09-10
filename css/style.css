@@ -9,7 +9,7 @@ body {
 
 .btn-primary {
 	background-color: #000000;
-	color: #F8ED17;
+	color: #59968F;
 	outline: none;
 	border-color: #000000;
 }
@@ -17,7 +17,7 @@ body {
 .btn-primary:hover {
 	outline: none;
 	background-color: #000000;
-	color: #F8ED17;
+	color: #59968F;
 }
 
 .btn-primary:focus {
@@ -65,7 +65,7 @@ body {
 
 .title-part p {
 	letter-spacing: .1em;
-	color: #F8ED17;
+	color: #59968F;
 	text-shadow: 0 .05em 0.08em rgba(0,0,0,0.5);
 }
 
@@ -118,7 +118,7 @@ body {
 }
 
 .my-navmenu-items a {
-	color: #F8ED17;
+	color: #59968F;
 	/* text-transform: uppercase; */
 }
 
@@ -163,7 +163,7 @@ body {
 
 .skills-section {
 	background-color: #000000;
-	color: #F8ED17;
+	color: #59968F;
 }
 
 .skill {
@@ -192,7 +192,7 @@ body {
 .percent {
 	line-height: 152px;
 	font-size: 2em;
-	color: #F8ED17;
+	color: #59968F;
 	font-weight: 600;
 }
 
@@ -284,7 +284,7 @@ body {
 .project-demo-header {
 	width: 100%;
 	text-align: center;
-	color: #F8ED17;
+	color: #59968F;
 }
 
 .project-part {
@@ -304,7 +304,7 @@ body {
 
 .img-overlay {
 	width: 91%;
-	background-color: #F8ED17;
+	background-color: #59968F;
 	height: 0;
 	position: absolute;
 	top: 0;
@@ -341,7 +341,7 @@ body {
 
 .overlay-container:hover .overlay-btn {
 	opacity: 1;
-	color: #F8ED17;
+	color: #59968F;
     background-color: #000000;
     border-color: #000000;
 }
@@ -356,25 +356,25 @@ body {
 
 .project-details h4 {
 	font-size: 1.2em;
-	color: #F8ED17;
+	color: #59968F;
 	/* font-style: italic; */
 }
 
 .project-details p {
-	color: #F8ED17;
+	color: #59968F;
 	font-size: 0.8em;
 }
 
 .live-demo-btn {
 	padding: .5em 2em;
-	background-color: #F8ED17;
+	background-color: #59968F;
 	color: #000000;
 	text-decoration: none;
 	border-radius: 2em;
 }
 
 .live-demo-btn:hover {
-	background-color: #F8ED17;
+	background-color: #59968F;
 	color: #000000;
 	text-decoration: none;
 }
@@ -431,7 +431,7 @@ body {
 }
 
 .contact-social ul li:hover a {
-	color: #F8ED17;
+	color: #59968F;
 }
 
 .cell {
