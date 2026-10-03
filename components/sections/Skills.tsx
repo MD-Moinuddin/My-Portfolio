@@ -15,7 +15,7 @@ export function Skills({ groups }: SkillsProps) {
             <h3 className="text-xs font-semibold uppercase tracking-wide opacity-50">{group.category}</h3>
             <ul className="mt-3 flex flex-wrap gap-2">
               {group.items.map((item) => (
-                <li key={item} className="rounded-md bg-ink/5 px-3 py-1 text-sm dark:bg-snow/10">
+                <li key={`${group.category}-${item}`} className="rounded-md bg-ink/5 px-3 py-1 text-sm dark:bg-snow/10">
                   {item}
                 </li>
               ))}
