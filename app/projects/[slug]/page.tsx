@@ -1,0 +1,79 @@
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import Image from 'next/image';
+import { getProjectBySlug, projects } from '@/lib/data/projects';
+import { site } from '@/lib/site';
+
+interface ProjectPageProps {
+  params: { slug: string };
+}
+
+export function generateStaticParams() {
+  return projects.map((project) => ({ slug: project.slug }));
+}
+
+export function generateMetadata({ params }: ProjectPageProps): Metadata {
+  const project = getProjectBySlug(params.slug);
+  if (!project) return {};
+  return {
+    title: project.name,
+    description: project.summary,
+    openGraph: {
+      title: `${project.name} — ${site.name}`,
+      description: project.summary,
+      images: [project.coverImage],
+    },
+  };
+}
+
+export default function ProjectPage({ params }: ProjectPageProps) {
+  const project = getProjectBySlug(params.slug);
+  if (!project) notFound();
+
+  return (
+    <article className="mx-auto max-w-2xl px-6 py-16">
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-text dark:text-accent">
+        {project.stack.join(' · ')}
+      </p>
+      <h1 className="mt-3 text-3xl font-bold">{project.name}</h1>
+      <p className="mt-2 text-lg opacity-70">{project.title}</p>
+
+      <div className="relative mt-8 aspect-video overflow-hidden rounded-lg">
+        <Image src={project.coverImage} alt={`${project.name} screenshot`} fill className="object-cover" />
+      </div>
+
+      <div className="mt-10 space-y-8">
+        <section>
+          <h2 className="text-sm font-semibold uppercase tracking-wide opacity-60">Problem</h2>
+          <p className="mt-2 leading-relaxed">{project.caseStudy.problem}</p>
+        </section>
+        <section>
+          <h2 className="text-sm font-semibold uppercase tracking-wide opacity-60">Contribution</h2>
+          <p className="mt-2 leading-relaxed">{project.caseStudy.contribution}</p>
+        </section>
+        <section>
+          <h2 className="text-sm font-semibold uppercase tracking-wide opacity-60">Outcome</h2>
+          <p className="mt-2 leading-relaxed">{project.caseStudy.outcome}</p>
+        </section>
+      </div>
+
+      <div className="mt-10 flex gap-4 text-sm">
+        {project.liveUrl && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-ink px-5 py-2 font-semibold text-paper dark:bg-snow dark:text-canvas"
+          >
+            View live
+          </a>
+        )}
+        {project.githubUrl && (
+          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="rounded-full border border-ink/30 px-5 py-2 dark:border-snow/30">
+            View code
+          </a>
+        )}
+      </div>
+    </article>
+  );
+}
