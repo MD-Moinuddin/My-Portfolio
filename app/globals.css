@@ -1,26 +1,22 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Keep these literal values in sync with lib/theme-colors.ts by hand —
+   Tailwind v4's CSS-first config has no mechanism to import JS/TS values. */
+@theme {
+  --color-paper: #fafafa;
+  --color-ink: #111111;
+  --color-canvas: #0b0b0d;
+  --color-snow: #eaeaea;
+  --color-accent: #59968F;
+  --color-accent-text: #3E6F69;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-paper text-ink dark:bg-canvas dark:text-snow;
 }
