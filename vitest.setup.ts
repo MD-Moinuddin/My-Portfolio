@@ -34,4 +34,13 @@ if (typeof window !== 'undefined') {
   Object.defineProperty(window, 'localStorage', {
     value: localStorageMock,
   });
+
+  // Mock IntersectionObserver for Framer Motion
+  class IntersectionObserverMock {
+    observe = () => null;
+    disconnect = () => null;
+    unobserve = () => null;
+    takeRecords = () => [];
+  }
+  window.IntersectionObserver = IntersectionObserverMock as any;
 }
