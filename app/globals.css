@@ -11,6 +11,7 @@
   --color-snow: #eaeaea;
   --color-accent: #59968F;
   --color-accent-text: #3E6F69;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
