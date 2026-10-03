@@ -42,5 +42,5 @@ if (typeof window !== 'undefined') {
     unobserve = () => null;
     takeRecords = () => [];
   }
-  window.IntersectionObserver = IntersectionObserverMock as any;
+  window.IntersectionObserver = IntersectionObserverMock as unknown as typeof window.IntersectionObserver;
 }

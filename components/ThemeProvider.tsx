@@ -24,6 +24,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- SSR-safe theme hydration requires reading browser APIs (localStorage/matchMedia) in an effect
     setTheme(getInitialTheme());
   }, []);
 
