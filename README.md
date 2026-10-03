@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MD Moinuddin — Portfolio
 
-## Getting Started
+Personal portfolio site for MD Moinuddin, a frontend engineer. Single-page editorial homepage
+(about, experience, skills, projects, contact) plus a `/projects` index and a case-study page per
+project.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, static generation) with **React 19**
+- **TypeScript**
+- **Tailwind CSS v4** (CSS-first config in `app/globals.css`)
+- **Inter** via `next/font/google`
+- **Framer Motion** for scroll reveals (respects `prefers-reduced-motion`)
+- **Vitest** + **Testing Library** + **jsdom** for unit/component tests
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command         | What it does                                  |
+| --------------- | --------------------------------------------- |
+| `npm run dev`   | Start the dev server                          |
+| `npm run build` | Production build (prerenders all static pages) |
+| `npm start`     | Serve the production build                    |
+| `npm test`      | Run the test suite once                       |
+| `npm run test:watch` | Run tests in watch mode                  |
+| `npm run lint`  | ESLint (`eslint-config-next`)                 |
 
-## Learn More
+## Project layout
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/                  Routes: homepage, /projects, /projects/[slug], sitemap, robots, OG image
+components/           Section and layout components, each with a colocated *.test.tsx
+components/sections/   Hero, Experience, Skills, ProjectsPreview, Contact
+components/layout/     Navbar, Footer, SkipLink
+lib/site.ts           Site-wide name, description, URL, email, social links
+lib/data/             Content sources: projects, experience, skills
+lib/theme-colors.ts   Color tokens, kept in sync with the @theme block in app/globals.css
+public/               cv.pdf and project screenshots
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Site metadata lives in `lib/site.ts`; page content lives in `lib/data/`. Adding a project to
+`lib/data/projects.ts` is enough to generate its card, its case-study route, and its sitemap entry.
+Themes are stored under the `portfolio-theme` localStorage key, with an inline script in the root
+layout applying the saved/system theme before first paint.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built for Vercel. `npm run build` produces a fully prerendered site; `lib/site.ts`'s `url` is the
+canonical origin used for metadata, the sitemap, and `robots.txt`.

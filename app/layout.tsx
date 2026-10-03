@@ -31,14 +31,31 @@ export const metadata: Metadata = {
   },
 };
 
+// Runs synchronously before first paint so a dark-mode visitor never sees a light flash.
+// Must stay in sync with getInitialTheme() in components/ThemeProvider.tsx:
+// same storage key ('portfolio-theme') and same matchMedia query.
+const themeInitScript = `(function(){try{var t=window.localStorage.getItem('portfolio-theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.classList.toggle('dark',t==='dark');}catch(e){}})();`;
+
+// Framer Motion serializes `initial={{ opacity: 0 }}` into the static HTML; without JS
+// those blocks would stay invisible forever, so force them visible when scripts are off.
+const noScriptRevealCss = '[style*="opacity:0"]{opacity:1!important;transform:none!important}';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className={`${sans.variable} font-sans`}>
+        <noscript>
+          <style>{noScriptRevealCss}</style>
+        </noscript>
         <ThemeProvider>
           <SkipLink />
           <Navbar />
-          <main id="main">{children}</main>
+          <main id="main" tabIndex={-1}>
+            {children}
+          </main>
           <Footer />
           <PersonJsonLd />
         </ThemeProvider>

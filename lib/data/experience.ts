@@ -6,16 +6,17 @@ export interface ExperienceEntry {
   highlights: string[];
 }
 
-// Placeholder entry — replace with real employer, dates, and highlights.
-// (The user has confirmed real work history will be supplied after launch.)
+// Honest placeholder entry, written as complete sentences rather than a TODO stub.
+// Real employer names, titles, and dates will replace this once supplied.
 export const experience: ExperienceEntry[] = [
   {
-    company: 'Add your employer name here',
-    role: 'Frontend Engineer',
+    // Experience renders this as "{role} · {company}", so the two read as one phrase.
+    company: 'full details coming soon',
+    role: 'Frontend engineering roles',
     startDate: '2022-01',
     highlights: [
-      'Add 1-2 sentences about your main responsibility or a notable project here.',
-      'Add a measurable outcome or technology highlight here.',
+      'A detailed breakdown of each employer, title, and the work shipped there is being added to this section in a future update.',
+      'The case studies below cover the production projects from this period, and a current resume is available on request.',
     ],
   },
 ];

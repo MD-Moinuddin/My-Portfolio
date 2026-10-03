@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom/vitest';
+import { JSDOM } from 'jsdom';
 
 if (typeof window !== 'undefined' && !window.matchMedia) {
   window.matchMedia = ((query: string) => ({
@@ -13,28 +14,19 @@ if (typeof window !== 'undefined' && !window.matchMedia) {
   })) as unknown as typeof window.matchMedia;
 }
 
-// Mock localStorage
-const localStorageMock = (() => {
-  let store: Record<string, string> = {};
-  return {
-    getItem: (key: string) => store[key] || null,
-    setItem: (key: string, value: string) => {
-      store[key] = value.toString();
-    },
-    removeItem: (key: string) => {
-      delete store[key];
-    },
-    clear: () => {
-      store = {};
-    },
-  };
-})();
+// Use jsdom's real Storage rather than a hand-rolled partial stand-in.
+// Node 26 exposes its own experimental `localStorage` global, which shadows jsdom's and
+// resolves to `undefined` without --localstorage-file; so when that happens, install a
+// genuine jsdom Storage instance (full spec surface: length, key(), clear(), etc.).
+if (typeof window !== 'undefined' && !window.localStorage) {
+  const { window: storageWindow } = new JSDOM('', { url: window.location.href });
+  Object.defineProperty(window, 'localStorage', {
+    configurable: true,
+    value: storageWindow.localStorage,
+  });
+}
 
 if (typeof window !== 'undefined') {
-  Object.defineProperty(window, 'localStorage', {
-    value: localStorageMock,
-  });
-
   // Mock IntersectionObserver for Framer Motion
   class IntersectionObserverMock {
     observe = () => null;

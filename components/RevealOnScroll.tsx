@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import type { ReactNode } from 'react';
 
 interface RevealOnScrollProps {
@@ -9,6 +9,14 @@ interface RevealOnScrollProps {
 }
 
 export function RevealOnScroll({ children, delay = 0 }: RevealOnScrollProps) {
+  const prefersReducedMotion = useReducedMotion();
+
+  // With reduced motion requested, render the content plainly — no hidden initial
+  // state is serialized into the HTML, so there is nothing to fade in or flash.
+  if (prefersReducedMotion) {
+    return <div>{children}</div>;
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
