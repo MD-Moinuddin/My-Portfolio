@@ -3,7 +3,10 @@ import { render, screen } from '@testing-library/react';
 import { projects } from '@/lib/data/projects';
 
 vi.mock('next/image', () => ({
-  default: ({ fill, ...rest }: Record<string, unknown>) => <img {...(rest as Record<string, unknown>)} />,
+  default: ({ alt, src, className }: { alt: string; src: string; className?: string }) => (
+    // eslint-disable-next-line @next/next/no-img-element -- test stub for next/image
+    <img alt={alt} src={src} className={className} />
+  ),
 }));
 
 vi.mock('next/navigation', () => ({
@@ -23,35 +26,47 @@ describe('generateStaticParams', () => {
 });
 
 describe('generateMetadata', () => {
-  it('uses the project name as the title', () => {
-    const metadata = generateMetadata({ params: { slug: 'emporia' } });
+  it('uses the project name as the title', async () => {
+    const metadata = await generateMetadata({ params: Promise.resolve({ slug: 'emporia' }) });
     expect(metadata.title).toBe('Emporia');
+  });
+
+  it('returns empty metadata for an unknown slug', async () => {
+    const metadata = await generateMetadata({ params: Promise.resolve({ slug: 'does-not-exist' }) });
+    expect(metadata).toEqual({});
   });
 });
 
 describe('ProjectPage', () => {
-  it('renders the problem, contribution, and outcome for a known slug', () => {
-    render(<ProjectPage params={{ slug: 'emporia' }} />);
+  it('renders the problem, contribution, and outcome for a known slug', async () => {
+    render(await ProjectPage({ params: Promise.resolve({ slug: 'emporia' }) }));
     const emporia = projects.find((project) => project.slug === 'emporia')!;
     expect(screen.getByText(emporia.caseStudy.problem)).toBeInTheDocument();
     expect(screen.getByText(emporia.caseStudy.contribution)).toBeInTheDocument();
     expect(screen.getByText(emporia.caseStudy.outcome)).toBeInTheDocument();
   });
 
-  it('shows a "View live" link when liveUrl is set', () => {
-    render(<ProjectPage params={{ slug: 'emporia' }} />);
+  it('shows a "View live" link when liveUrl is set', async () => {
+    render(await ProjectPage({ params: Promise.resolve({ slug: 'emporia' }) }));
     expect(screen.getByRole('link', { name: 'View live' })).toHaveAttribute('href', 'https://emporia.bcc.gov.bd/');
   });
 
-  it('shows a "View code" link only when githubUrl is set', () => {
-    render(<ProjectPage params={{ slug: 'mogo' }} />);
+  it('shows a "View code" link when githubUrl is set', async () => {
+    render(await ProjectPage({ params: Promise.resolve({ slug: 'mogo' }) }));
     expect(screen.getByRole('link', { name: 'View code' })).toHaveAttribute(
       'href',
       'https://github.com/MD-Moinuddin/Mogo',
     );
   });
 
-  it('calls notFound for an unknown slug', () => {
-    expect(() => render(<ProjectPage params={{ slug: 'does-not-exist' }} />)).toThrow('NEXT_NOT_FOUND');
+  it('omits the "View code" link when githubUrl is absent', async () => {
+    render(await ProjectPage({ params: Promise.resolve({ slug: 'emporia' }) }));
+    expect(screen.queryByRole('link', { name: 'View code' })).toBeNull();
+  });
+
+  it('calls notFound for an unknown slug', async () => {
+    await expect(ProjectPage({ params: Promise.resolve({ slug: 'does-not-exist' }) })).rejects.toThrow(
+      'NEXT_NOT_FOUND',
+    );
   });
 });

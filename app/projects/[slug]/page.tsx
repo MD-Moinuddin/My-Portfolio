@@ -5,15 +5,16 @@ import { getProjectBySlug, projects } from '@/lib/data/projects';
 import { site } from '@/lib/site';
 
 interface ProjectPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
 }
 
-export function generateMetadata({ params }: ProjectPageProps): Metadata {
-  const project = getProjectBySlug(params.slug);
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) return {};
   return {
     title: project.name,
@@ -26,8 +27,9 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
   };
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) notFound();
 
   return (
@@ -39,7 +41,14 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       <p className="mt-2 text-lg opacity-70">{project.title}</p>
 
       <div className="relative mt-8 aspect-video overflow-hidden rounded-lg">
-        <Image src={project.coverImage} alt={`${project.name} screenshot`} fill className="object-cover" />
+        <Image
+          src={project.coverImage}
+          alt={`${project.name} screenshot`}
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, 672px"
+          className="object-cover"
+        />
       </div>
 
       <div className="mt-10 space-y-8">
