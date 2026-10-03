@@ -1,0 +1,31 @@
+import { RevealOnScroll } from '@/components/RevealOnScroll';
+import { formatRange, type ExperienceEntry } from '@/lib/data/experience';
+
+interface ExperienceProps {
+  entries: ExperienceEntry[];
+}
+
+export function Experience({ entries }: ExperienceProps) {
+  return (
+    <section id="experience" className="mx-auto max-w-2xl px-6 py-16">
+      <h2 className="text-sm font-semibold uppercase tracking-[0.2em] opacity-60">Experience</h2>
+      <ol className="mt-8 space-y-10 border-l border-ink/10 pl-6 dark:border-snow/10">
+        {entries.map((entry) => (
+          <li key={`${entry.company}-${entry.startDate}`}>
+            <RevealOnScroll>
+              <p className="text-xs opacity-60">{formatRange(entry)}</p>
+              <h3 className="mt-1 text-lg font-semibold">
+                {entry.role} · {entry.company}
+              </h3>
+              <ul className="mt-2 space-y-1 text-sm opacity-80">
+                {entry.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
+            </RevealOnScroll>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
