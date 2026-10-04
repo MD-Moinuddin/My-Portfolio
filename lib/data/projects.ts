@@ -69,17 +69,20 @@ export const projects: Project[] = [
   {
     slug: 'bdjobs',
     name: 'BDJobs',
-    title: 'Largest Job Portal in Bangladesh',
-    summary: "Accessibility improvements on Bangladesh's largest job portal, meeting WCAG 2.1 AA.",
-    stack: ['WCAG 2.1 AA'],
+    title: 'Digital Accessibility Consultancy to Largest Job Site in Bangladesh',
+    summary: "Accessibility consultancy for Bangladesh's largest job site, under the FCDO-funded I2I program.",
+    stack: ['WCAG 2.1 AA', 'Screen Readers'],
     coverImage: '/images/projects/bdjobs.webp',
     liveUrl: 'https://www.bdjobs.com/',
     caseStudy: {
       problem:
-        "As Bangladesh's largest job portal, BDJobs needed targeted accessibility fixes to meet WCAG 2.1 AA across high-traffic pages without a full rebuild.",
-      contribution: ['Audited key pages against WCAG 2.1 AA and implemented the fixes required to close the gaps found.'],
+        'As part of Project I2I (Innovation to Inclusion), funded by the UK Foreign, Commonwealth and Development Office (FCDO), BDJobs - the largest job site in Bangladesh - needed expert consultancy to make its popular website accessible to persons with disabilities.',
+      contribution: [
+        'Conducted comprehensive accessibility audits to identify UI and functionality barriers.',
+        'Authored technical documentation and collaborated directly with the development team to guide remediation.',
+      ],
       outcome:
-        'Accessibility conformance improved on the audited pages. Full details and before/after metrics are coming in a future update.',
+        'Delivered as part of a Genweb2 consultancy team between July and November 2020, contributing to a more accessible experience for persons with disabilities on Bangladesh\'s most-used job platform.',
     },
   },
   {
