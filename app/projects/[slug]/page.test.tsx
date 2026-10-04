@@ -42,7 +42,9 @@ describe('ProjectPage', () => {
     render(await ProjectPage({ params: Promise.resolve({ slug: 'emporia' }) }));
     const emporia = projects.find((project) => project.slug === 'emporia')!;
     expect(screen.getByText(emporia.caseStudy.problem)).toBeInTheDocument();
-    expect(screen.getByText(emporia.caseStudy.contribution)).toBeInTheDocument();
+    emporia.caseStudy.contribution.forEach((item) => {
+      expect(screen.getByText(item)).toBeInTheDocument();
+    });
     expect(screen.getByText(emporia.caseStudy.outcome)).toBeInTheDocument();
   });
 

@@ -11,7 +11,7 @@ function makeProject(slug: string): Project {
     summary: slug,
     stack: ['React'],
     coverImage: '/images/projects/test.png',
-    caseStudy: { problem: 'p', contribution: 'c', outcome: 'o' },
+    caseStudy: { problem: 'p', contribution: ['c'], outcome: 'o' },
   };
 }
 

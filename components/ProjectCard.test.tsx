@@ -10,7 +10,7 @@ const project: Project = {
   summary: 'A project used only in tests.',
   stack: ['React', 'Next.js'],
   coverImage: '/images/projects/test.png',
-  caseStudy: { problem: 'p', contribution: 'c', outcome: 'o' },
+  caseStudy: { problem: 'p', contribution: ['c'], outcome: 'o' },
 };
 
 describe('ProjectCard', () => {

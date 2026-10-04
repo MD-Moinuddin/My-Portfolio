@@ -58,7 +58,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </section>
         <section>
           <h2 className="text-sm font-semibold uppercase tracking-wide opacity-60">Contribution</h2>
-          <p className="mt-2 leading-relaxed">{project.caseStudy.contribution}</p>
+          <ul className="mt-2 list-disc list-outside space-y-1.5 pl-4 leading-relaxed marker:text-accent-text dark:marker:text-accent">
+            {project.caseStudy.contribution.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </section>
         <section>
           <h2 className="text-sm font-semibold uppercase tracking-wide opacity-60">Outcome</h2>

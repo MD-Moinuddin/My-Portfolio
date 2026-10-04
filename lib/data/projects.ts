@@ -9,7 +9,7 @@ export interface Project {
   githubUrl?: string;
   caseStudy: {
     problem: string;
-    contribution: string;
+    contribution: string[];
     outcome: string;
   };
 }
@@ -26,8 +26,11 @@ export const projects: Project[] = [
     caseStudy: {
       problem:
         'The Bangladesh Computer Council (BCC) needed an accessible e-learning platform, with accessible audio/video learning materials, to train persons with disabilities as skilled ICT manpower and promote their employment through an integrated job portal - supporting Digital Bangladesh and the Sustainable Development Goals (SDG).',
-      contribution:
-        'Developed and managed the user interface over an 18-month engagement (July 2019 - July 2021), converting Figma designs into pixel-perfect Angular 8 implementations and ensuring compliance with W3C WCAG 2.1 AA accessibility standards across the course and job-listing flows, working alongside a Spring Boot backend team.',
+      contribution: [
+        'Developed and managed a modern user interface, ensuring a smooth user experience throughout the project.',
+        'Converted Figma designs into pixel-perfect front-end implementations.',
+        'Ensured compliance with W3C WCAG 2.1 AA accessibility standards.',
+      ],
       outcome:
         'Delivered by Genweb2 under contract to BCC and shipped to production, where it remains in active use today as part of the national Digital Bangladesh initiative.',
     },
@@ -43,7 +46,7 @@ export const projects: Project[] = [
     caseStudy: {
       problem:
         'Pristine Solutions needed a company website that represented their services clearly and loaded fast on both desktop and mobile.',
-      contribution: 'Designed and built the full Angular 13 frontend, from component structure to responsive layout.',
+      contribution: ['Designed and built the full Angular 13 frontend, from component structure to responsive layout.'],
       outcome:
         "Live in production as the company's primary web presence. Further detail on the build is coming in a future update.",
     },
@@ -58,7 +61,7 @@ export const projects: Project[] = [
     liveUrl: 'https://arcade.earlydata.com/',
     caseStudy: {
       problem: "Arcade's internal teams needed a management platform to replace manual, spreadsheet-driven workflows.",
-      contribution: 'Built the Angular 13 frontend against a Spring Boot API, covering the core management views end to end.',
+      contribution: ['Built the Angular 13 frontend against a Spring Boot API, covering the core management views end to end.'],
       outcome: 'In active use by the team it was built for. A deeper case study is coming in a future update.',
     },
   },
@@ -73,7 +76,7 @@ export const projects: Project[] = [
     caseStudy: {
       problem:
         "As Bangladesh's largest job portal, BDJobs needed targeted accessibility fixes to meet WCAG 2.1 AA across high-traffic pages without a full rebuild.",
-      contribution: 'Audited key pages against WCAG 2.1 AA and implemented the fixes required to close the gaps found.',
+      contribution: ['Audited key pages against WCAG 2.1 AA and implemented the fixes required to close the gaps found.'],
       outcome:
         'Accessibility conformance improved on the audited pages. Full details and before/after metrics are coming in a future update.',
     },
@@ -88,7 +91,7 @@ export const projects: Project[] = [
     liveUrl: 'https://www.zoneproductionstudios.com/',
     caseStudy: {
       problem: 'Zone Production Studios needed a lightweight marketing site to showcase their production work without a heavy framework.',
-      contribution: 'Built the site from scratch with HTML5, Sass, and vanilla JavaScript, focused on fast load times.',
+      contribution: ['Built the site from scratch with HTML5, Sass, and vanilla JavaScript, focused on fast load times.'],
       outcome: "Live as the studio's public site. A fuller write-up is coming in a future update.",
     },
   },
@@ -103,7 +106,7 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/MD-Moinuddin/Mogo',
     caseStudy: {
       problem: 'Mogo needed a single, polished landing page to introduce the product and drive sign-ups.',
-      contribution: 'Designed and built the landing page with HTML5, Sass, and JavaScript, including the responsive layout and interactions.',
+      contribution: ['Designed and built the landing page with HTML5, Sass, and JavaScript, including the responsive layout and interactions.'],
       outcome: 'Published and viewable live, with source open on GitHub. A fuller write-up is coming in a future update.',
     },
   },
@@ -118,7 +121,7 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/MD-Moinuddin/E-shopper',
     caseStudy: {
       problem: 'E-shopper was a self-directed project to practice building an ecommerce storefront UI from scratch.',
-      contribution: 'Designed and built the full storefront layout - product grid, product detail, and cart UI - with HTML5, Sass, and JavaScript.',
+      contribution: ['Designed and built the full storefront layout - product grid, product detail, and cart UI - with HTML5, Sass, and JavaScript.'],
       outcome: 'Published and viewable live, with source open on GitHub. A fuller write-up is coming in a future update.',
     },
   },
@@ -133,7 +136,7 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/MD-Moinuddin/Craft',
     caseStudy: {
       problem: 'Craft needed a landing page template exploring a different visual style than Mogo, as a design practice project.',
-      contribution: 'Designed and built the landing page with HTML5, Sass, and JavaScript.',
+      contribution: ['Designed and built the landing page with HTML5, Sass, and JavaScript.'],
       outcome: 'Published and viewable live, with source open on GitHub. A fuller write-up is coming in a future update.',
     },
   },
