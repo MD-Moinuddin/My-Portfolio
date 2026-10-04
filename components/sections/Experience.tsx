@@ -17,7 +17,7 @@ export function Experience({ entries }: ExperienceProps) {
               <h3 className="mt-1 text-lg font-semibold">
                 {entry.role} · {entry.company}
               </h3>
-              <ul className="mt-2 space-y-1 text-sm opacity-80">
+              <ul className="mt-2 list-disc list-outside space-y-1.5 pl-4 text-sm opacity-80 marker:text-accent-text dark:marker:text-accent">
                 {entry.highlights.map((highlight) => (
                   <li key={highlight}>{highlight}</li>
                 ))}
