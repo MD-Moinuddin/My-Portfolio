@@ -4,15 +4,15 @@ import { Skills } from './Skills';
 import type { SkillGroup } from '@/lib/data/skills';
 
 const groups: SkillGroup[] = [
-  { category: 'Languages', items: ['TypeScript', 'JavaScript'] },
-  { category: 'Frameworks', items: ['Next.js'] },
+  { category: 'Frontend', items: ['TypeScript', 'JavaScript'] },
+  { category: 'Backend', items: ['Next.js'] },
 ];
 
 describe('Skills', () => {
   it('renders each category heading', () => {
     render(<Skills groups={groups} />);
-    expect(screen.getByText('Languages')).toBeInTheDocument();
-    expect(screen.getByText('Frameworks')).toBeInTheDocument();
+    expect(screen.getByText('Frontend')).toBeInTheDocument();
+    expect(screen.getByText('Backend')).toBeInTheDocument();
   });
 
   it('renders each skill tag', () => {
