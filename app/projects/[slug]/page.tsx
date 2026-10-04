@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     title: project.name,
     description: project.summary,
     openGraph: {
-      title: `${project.name} — ${site.name}`,
+      title: `${project.name} - ${site.name}`,
       description: project.summary,
       images: [project.coverImage],
     },

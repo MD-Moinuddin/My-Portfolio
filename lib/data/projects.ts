@@ -118,7 +118,7 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/MD-Moinuddin/E-shopper',
     caseStudy: {
       problem: 'E-shopper was a self-directed project to practice building an ecommerce storefront UI from scratch.',
-      contribution: 'Designed and built the full storefront layout — product grid, product detail, and cart UI — with HTML5, Sass, and JavaScript.',
+      contribution: 'Designed and built the full storefront layout - product grid, product detail, and cart UI - with HTML5, Sass, and JavaScript.',
       outcome: 'Published and viewable live, with source open on GitHub. A fuller write-up is coming in a future update.',
     },
   },

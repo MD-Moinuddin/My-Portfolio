@@ -1,6 +1,6 @@
 export const site = {
   name: 'MD Moinuddin',
-  title: 'MD Moinuddin — Frontend Engineer',
+  title: 'MD Moinuddin - Frontend Engineer',
   description:
     'Frontend engineer with 4+ years building accessible, production web apps with Angular and React.',
   url: 'https://md-moinuddin.vercel.app',

@@ -14,7 +14,7 @@ export const experience: ExperienceEntry[] = [
     highlights: [
       'Building Life Tracker, a secure, accessible personal dashboard app with React, Node.js, PostgreSQL, and Docker, including JWT authentication and a full CI/CD pipeline via GitHub Actions.',
       "Followed OWASP-aligned auth practices (in-memory access tokens, httpOnly refresh cookies, bcrypt hashing, rate limiting) and automated accessibility testing with jest-axe toward WCAG 2.1 AA compliance.",
-      'Deployed across Vercel (frontend), Render (backend), and Neon (Postgres) — live at life-tracker-brown-one.vercel.app.',
+      'Deployed across Vercel (frontend), Render (backend), and Neon (Postgres) - live at life-tracker-brown-one.vercel.app.',
     ],
   },
   {
@@ -24,7 +24,7 @@ export const experience: ExperienceEntry[] = [
     endDate: '2026-07',
     highlights: [
       'Designed and engineered Gumti, a full realization of the TARA state-machine replication protocol as a distributed Apache Flink job, including its consensus, view-change, and garbage-collection sub-protocols.',
-      "Solved gaps in Flink's operator model for consensus workloads — engineered-key routing, ZooKeeper replica discovery, and network feedback loops around its acyclic dataflow.",
+      "Solved gaps in Flink's operator model for consensus workloads - engineered-key routing, ZooKeeper replica discovery, and network feedback loops around its acyclic dataflow.",
       'Benchmarked throughput, latency, and fault tolerance: Gumti sustains ~5,300 req/s at a ~3ms latency floor and recovers from leader failures in ~5s with no requests lost.',
     ],
   },
@@ -57,7 +57,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     company: 'TECHTONIX',
-    role: 'Internship — Front End Developer',
+    role: 'Internship - Front End Developer',
     startDate: '2017-11',
     endDate: '2018-02',
     highlights: [
@@ -76,5 +76,5 @@ function formatMonthYear(value: string): string {
 export function formatRange(entry: ExperienceEntry): string {
   const start = formatMonthYear(entry.startDate);
   const end = entry.endDate ? formatMonthYear(entry.endDate) : 'Present';
-  return `${start} — ${end}`;
+  return `${start} - ${end}`;
 }

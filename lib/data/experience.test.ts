@@ -17,12 +17,12 @@ describe('experience data', () => {
 
 describe('formatRange', () => {
   it('shows "Present" when there is no endDate', () => {
-    expect(formatRange({ company: 'X', role: 'Y', startDate: '2022-01', highlights: [] })).toBe('Jan 2022 — Present');
+    expect(formatRange({ company: 'X', role: 'Y', startDate: '2022-01', highlights: [] })).toBe('Jan 2022 - Present');
   });
 
   it('shows the end month and year when endDate is set', () => {
     expect(
       formatRange({ company: 'X', role: 'Y', startDate: '2020-01', endDate: '2022-06', highlights: [] }),
-    ).toBe('Jan 2020 — Jun 2022');
+    ).toBe('Jan 2020 - Jun 2022');
   });
 });
