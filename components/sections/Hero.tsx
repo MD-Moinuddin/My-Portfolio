@@ -4,12 +4,9 @@ interface HeroProps {
   name: string;
   role: string;
   description: string;
-  bio?: string[];
-  expertise?: string[];
-  languages?: string;
 }
 
-export function Hero({ name, role, description, bio, expertise, languages }: HeroProps) {
+export function Hero({ name, role, description }: HeroProps) {
   return (
     <section id="about" className="mx-auto max-w-2xl px-6 pb-16 pt-20">
       <RevealOnScroll>
@@ -25,29 +22,6 @@ export function Hero({ name, role, description, bio, expertise, languages }: Her
           </a>
         </div>
       </RevealOnScroll>
-
-      {bio && bio.length > 0 && (
-        <RevealOnScroll>
-          <div className="mt-10 space-y-5 text-base leading-relaxed opacity-90">
-            {bio.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-
-          {expertise && expertise.length > 0 && (
-            <>
-              <h2 className="mt-10 text-sm font-semibold uppercase tracking-[0.2em] opacity-60">Key Expertise</h2>
-              <ul className="mt-4 list-disc list-outside space-y-1.5 pl-4 text-sm opacity-80 marker:text-accent-text dark:marker:text-accent">
-                {expertise.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </>
-          )}
-
-          {languages && <p className="mt-6 text-sm opacity-70">{languages}</p>}
-        </RevealOnScroll>
-      )}
     </section>
   );
 }
