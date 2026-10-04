@@ -16,6 +16,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: 'life-tracker',
+    name: 'Life Tracker',
+    title: 'Secure, Accessible Personal Dashboard',
+    summary: 'A secure, accessible personal dashboard app with JWT authentication, built with React, Node.js, PostgreSQL, and Docker.',
+    stack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker'],
+    coverImage: '/images/projects/life-tracker.png',
+    liveUrl: 'https://life-tracker-brown-one.vercel.app/signup',
+    caseStudy: {
+      problem:
+        'Needed a secure, accessible foundation for a personal life-tracking app. V1 focuses on full authentication and a protected shell for future modules - work schedule, fitness, nutrition, and finance - planned for later versions.',
+      contribution: [
+        'Built the frontend with React, TypeScript, and Vite, and the backend with Node.js, Express, and TypeScript using a layered Controller-Service-Repository architecture.',
+        'Designed the data layer with PostgreSQL and Prisma ORM.',
+        'Implemented JWT access tokens with httpOnly refresh cookies, bcrypt password hashing, zod validation, and rate limiting, following OWASP-aligned auth practices - generic login error messages, in-memory access tokens instead of localStorage, and silent token refresh.',
+        'Containerized the app with a hardened, multi-stage, non-root Docker build and Docker Compose, with a full CI/CD pipeline via GitHub Actions.',
+        'Covered the app with automated tests (Vitest/Jest) and automated accessibility testing (jest-axe) toward WCAG 2.1 AA compliance.',
+      ],
+      outcome:
+        'Shipped as v1 - a secure, accessible dashboard with full authentication - deployed across Vercel (frontend), Render (backend), and Neon (Postgres), with future life-tracking modules planned.',
+    },
+  },
+  {
     slug: 'emporia',
     name: 'Emporia',
     title: 'Empowerment of Persons with Disabilities through ICT',
