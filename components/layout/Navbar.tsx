@@ -39,6 +39,15 @@ export function Navbar() {
               </li>
             ))}
             <li>
+              <Link
+                href="/thesis"
+                onClick={() => setOpen(false)}
+                className="inline-block rounded-full bg-accent-text px-3 py-1 text-xs font-semibold text-paper dark:bg-accent dark:text-canvas"
+              >
+                Master Thesis
+              </Link>
+            </li>
+            <li>
               <a
                 href="/cv.pdf"
                 target="_blank"

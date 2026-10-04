@@ -33,6 +33,11 @@ describe('Navbar', () => {
     expect(resumeLink).toHaveAttribute('target', '_blank');
   });
 
+  it('links the highlighted Master Thesis button to /thesis', () => {
+    renderNavbar();
+    expect(screen.getByRole('link', { name: 'Master Thesis' })).toHaveAttribute('href', '/thesis');
+  });
+
   it('keeps the logo and theme toggle outside the collapsible link list', () => {
     renderNavbar();
     const list = document.getElementById('primary-nav-links')!;
@@ -50,7 +55,7 @@ describe('Navbar', () => {
     // Collapsed below `sm`, visible from `sm` up — but always in the DOM.
     expect(list.className).toContain('hidden');
     expect(list.className).toContain('sm:flex');
-    expect(list.querySelectorAll('a')).toHaveLength(6);
+    expect(list.querySelectorAll('a')).toHaveLength(7);
   });
 
   it('expands and collapses the mobile menu when the toggle is pressed', () => {
