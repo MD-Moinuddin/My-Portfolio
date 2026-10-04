@@ -2,7 +2,7 @@ export const site = {
   name: 'MD Moinuddin',
   title: 'MD Moinuddin - Frontend Engineer',
   description:
-    'Software engineer with hands-on industry experience and an M.Sc. in International Software System Science from the University of Bamberg - currently seeking Software Engineering or Web Development opportunities.',
+    'Software engineer with 4+ years of hands-on industry experience and an M.Sc. in International Software System Science from the University of Bamberg - currently seeking Software Engineering or Web Development opportunities.',
   url: 'https://md-moinuddin.vercel.app',
   email: 'moinuddinmd067@gmail.com',
   contactFormAction: 'https://formspree.io/f/mqkvbqlw',
