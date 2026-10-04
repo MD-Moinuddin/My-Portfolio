@@ -18,18 +18,18 @@ export const projects: Project[] = [
   {
     slug: 'emporia',
     name: 'Emporia',
-    title: 'Accessible E-learning & Job Portal',
-    summary: 'E-learning and job portal built with Angular and Spring Boot, meeting WCAG 2.1.',
+    title: 'Empowerment of Persons with Disabilities through ICT',
+    summary: 'Accessible e-learning and job portal for persons with disabilities, built for the Bangladesh Computer Council.',
     stack: ['Angular 8', 'Spring Boot', 'WCAG 2.1'],
     coverImage: '/images/projects/emporia.png',
     liveUrl: 'https://emporia.bcc.gov.bd/',
     caseStudy: {
       problem:
-        'Emporia needed to deliver course content and job listings to a wide range of users, including people relying on assistive technology, without sacrificing a modern UI.',
+        'The Bangladesh Computer Council (BCC) needed an accessible e-learning platform, with accessible audio/video learning materials, to train persons with disabilities as skilled ICT manpower and promote their employment through an integrated job portal - supporting Digital Bangladesh and the Sustainable Development Goals (SDG).',
       contribution:
-        'Built the Angular 8 frontend and implemented components to meet WCAG 2.1 accessibility criteria across the course and job-listing flows, working alongside a Spring Boot backend team.',
+        'Developed and managed the user interface over an 18-month engagement (July 2019 - July 2021), converting Figma designs into pixel-perfect Angular 8 implementations and ensuring compliance with W3C WCAG 2.1 AA accessibility standards across the course and job-listing flows, working alongside a Spring Boot backend team.',
       outcome:
-        'Shipped to production and in active use today. A full breakdown of the accessibility work and metrics is coming in a future update.',
+        'Delivered by Genweb2 under contract to BCC and shipped to production, where it remains in active use today as part of the national Digital Bangladesh initiative.',
     },
   },
   {
