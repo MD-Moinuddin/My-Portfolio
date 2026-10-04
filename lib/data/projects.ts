@@ -38,18 +38,23 @@ export const projects: Project[] = [
   },
   {
     slug: 'pristine',
-    name: 'Pristine Solutions',
-    title: 'Company Website',
-    summary: 'Marketing website for Pristine Solutions built with Angular 13.',
-    stack: ['Angular 13'],
+    name: 'Pristine Solutions BD',
+    title: 'Corporate Website',
+    summary: 'Full corporate website for Pristine Solutions BD, built with Angular 13, Bootstrap, and Ant Design.',
+    stack: ['Angular 13', 'SCSS', 'HTML5', 'Bootstrap', 'Ant Design'],
     coverImage: '/images/projects/pristine.png',
     liveUrl: 'https://pristinesolutionsbd.com/',
     caseStudy: {
       problem:
-        'Pristine Solutions needed a company website that represented their services clearly and loaded fast on both desktop and mobile.',
-      contribution: ['Designed and built the full Angular 13 frontend, from component structure to responsive layout.'],
+        'Pristine Solutions BD needed a full corporate website built from the ground up, translating static brand and content requirements into a responsive, production-ready web application.',
+      contribution: [
+        'Designed and developed the full corporate website from the ground up, translating static brand and content requirements into a responsive, production-ready web application.',
+        "Combined Bootstrap's layout system with Ant Design's component library to deliver a polished, consistent UI across all pages while keeping load times fast.",
+        'Structured all styling in SCSS (Sass) for a maintainable, component-scoped design system rather than flat CSS.',
+        'Ensured full cross-browser and cross-device responsiveness, giving a consistent experience on desktop and mobile.',
+      ],
       outcome:
-        "Live in production as the company's primary web presence. Further detail on the build is coming in a future update.",
+        "Delivered between July and September 2022 and live in production as Pristine Solutions BD's primary web presence.",
     },
   },
   {
