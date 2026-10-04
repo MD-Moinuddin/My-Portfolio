@@ -11,7 +11,7 @@ import { site } from '@/lib/site';
 export default function HomePage() {
   return (
     <>
-      <Hero name={site.name} role="Frontend Engineer" description={site.description} />
+      <Hero name={site.name} role="Software Engineer" description={site.description} />
       <Experience entries={experience} />
       <Skills groups={skillGroups} />
       <ProjectsPreview projects={projects} limit={4} />

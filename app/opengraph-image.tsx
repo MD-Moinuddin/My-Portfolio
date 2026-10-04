@@ -33,7 +33,7 @@ export default function OpengraphImage() {
           Portfolio
         </div>
         <div style={{ marginTop: 24, fontSize: 86, fontWeight: 700, lineHeight: 1.05 }}>{site.name}</div>
-        <div style={{ marginTop: 20, fontSize: 38, opacity: 0.75 }}>Frontend Engineer</div>
+        <div style={{ marginTop: 20, fontSize: 38, opacity: 0.75 }}>Software Engineer</div>
         <div
           style={{
             marginTop: 48,

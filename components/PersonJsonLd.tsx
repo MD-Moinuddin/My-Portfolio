@@ -6,7 +6,7 @@ export function PersonJsonLd() {
     '@type': 'Person',
     name: site.name,
     url: site.url,
-    jobTitle: 'Frontend Engineer',
+    jobTitle: 'Software Engineer',
     email: site.email,
     sameAs: [site.social.linkedin, site.social.github],
   };
