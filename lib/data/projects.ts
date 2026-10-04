@@ -21,7 +21,7 @@ export const projects: Project[] = [
     title: 'Secure, Accessible Personal Dashboard',
     summary: 'A secure, accessible personal dashboard app with JWT authentication, built with React, Node.js, PostgreSQL, and Docker.',
     stack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker'],
-    coverImage: '/images/projects/life-tracker.png',
+    coverImage: '/images/projects/life-tracker.svg',
     liveUrl: 'https://life-tracker-brown-one.vercel.app/signup',
     caseStudy: {
       problem:
