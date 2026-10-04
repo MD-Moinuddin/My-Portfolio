@@ -55,15 +55,21 @@ export const projects: Project[] = [
   {
     slug: 'arcade',
     name: 'Arcade',
-    title: 'Management Platform',
-    summary: 'Internal management platform built with Angular and Spring Boot.',
-    stack: ['Angular 13', 'Spring Boot'],
+    title: 'AI-Driven Data Clustering Platform',
+    summary: 'AI-driven data optimization platform for clustering scraped web data, built with Angular and Spring Boot JPA.',
+    stack: ['Angular 13', 'Spring Boot JPA', 'GitLab'],
     coverImage: '/images/projects/arcade.svg',
     liveUrl: 'https://arcade.earlydata.com/',
     caseStudy: {
-      problem: "Arcade's internal teams needed a management platform to replace manual, spreadsheet-driven workflows.",
-      contribution: ['Built the Angular 13 frontend against a Spring Boot API, covering the core management views end to end.'],
-      outcome: 'In active use by the team it was built for. A deeper case study is coming in a future update.',
+      problem:
+        'Arcade needed to transform large volumes of online scraped data into a form usable for AI and machine-learning workflows, with an interface that let users cluster items quickly through drag-and-drop.',
+      contribution: [
+        'Built an AI-driven data optimization platform with an Angular frontend and a Spring Boot JPA backend.',
+        'Processed scraped web data to improve its compatibility for AI and machine-learning workflows.',
+        'Designed advanced UI features including multi-item drag-and-drop clustering, an image magnifier, keyboard-driven left/right image navigation, and undo/restore functionality.',
+      ],
+      outcome:
+        'Delivered between September 2021 and August 2022, giving users an efficient drag-and-drop workflow for clustering and preparing scraped data for AI pipelines.',
     },
   },
   {
