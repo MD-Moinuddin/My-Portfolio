@@ -43,7 +43,7 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="inline-block rounded-full bg-accent-text px-3 py-1 text-xs font-semibold text-paper dark:bg-accent dark:text-canvas"
               >
-                Master Thesis
+                Thesis
               </Link>
             </li>
             <li>
