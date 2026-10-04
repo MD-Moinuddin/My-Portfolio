@@ -66,8 +66,15 @@ export const experience: ExperienceEntry[] = [
   },
 ];
 
+const MONTH_LABELS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+function formatMonthYear(value: string): string {
+  const [year, month] = value.split('-');
+  return `${MONTH_LABELS[Number(month) - 1]} ${year}`;
+}
+
 export function formatRange(entry: ExperienceEntry): string {
-  const [startYear] = entry.startDate.split('-');
-  const endLabel = entry.endDate ? entry.endDate.split('-')[0] : 'Present';
-  return `${startYear} — ${endLabel}`;
+  const start = formatMonthYear(entry.startDate);
+  const end = entry.endDate ? formatMonthYear(entry.endDate) : 'Present';
+  return `${start} — ${end}`;
 }
