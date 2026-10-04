@@ -6,7 +6,6 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 
 // Root-relative hrefs so the section anchors also work from /projects and /projects/[slug].
 const NAV_LINKS = [
-  { href: '/#about', label: 'About' },
   { href: '/#experience', label: 'Experience' },
   { href: '/#skills', label: 'Skills' },
   { href: '/#projects', label: 'Projects' },
