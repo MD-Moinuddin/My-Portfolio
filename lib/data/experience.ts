@@ -34,7 +34,8 @@ export const experience: ExperienceEntry[] = [
     startDate: '2023-04',
     endDate: '2023-07',
     highlights: [
-      'Worked part-time as a software engineer in Cologne, Germany, contributing to TypeScript development and software testing.',
+      "Developed selector-generation logic in TypeScript to uniquely identify actionable DOM elements (buttons, inputs) via parent-child DOM traversal, for automaited's browser-based automation product.",
+      'Wrote and executed tests to validate element-detection accuracy across varied, real-world web page structures.',
     ],
   },
   {
@@ -43,16 +44,20 @@ export const experience: ExperienceEntry[] = [
     startDate: '2019-07',
     endDate: '2022-08',
     highlights: [
-      'Worked full-time as a software engineer for over three years, building production web applications with JavaScript and Git-based workflows.',
+      'Designed and developed modern, dynamic user interfaces for web applications using Angular.',
+      'Reduced application loading time by over 33% through architectural refactoring and bundle optimization.',
+      'Ensured website accessibility for an inclusive user experience, working closely with people with disabilities to address their requirements.',
+      'Delivered high-quality, responsive user interfaces within a cross-functional Agile team environment.',
     ],
   },
   {
     company: 'SynergyForce Solutions',
-    role: 'Software Engineer',
+    role: 'Web Developer',
     startDate: '2018-05',
     endDate: '2019-02',
     highlights: [
-      'Built web applications in Winnipeg, Manitoba, Canada, using HTML5, Bootstrap, and related front-end technologies.',
+      'Designed and implemented the front-end architecture for an employee management application.',
+      "Performed debugging and testing to ensure the application's functionality.",
     ],
   },
   {
