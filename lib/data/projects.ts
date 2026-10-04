@@ -30,6 +30,7 @@ export const projects: Project[] = [
         'Developed and managed a modern user interface, ensuring a smooth user experience throughout the project.',
         'Converted Figma designs into pixel-perfect front-end implementations.',
         'Ensured compliance with W3C WCAG 2.1 AA accessibility standards.',
+        'Worked directly with persons with disabilities to understand their requirements and for testing purposes.',
       ],
       outcome:
         'Delivered by Genweb2 under contract to BCC and shipped to production, where it remains in active use today as part of the national Digital Bangladesh initiative.',
