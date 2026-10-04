@@ -12,4 +12,19 @@ describe('ThesisPage', () => {
   it('sets the page title to "Master Thesis"', () => {
     expect(metadata.title).toBe('Master Thesis');
   });
+
+  it('renders the Design, Engineering, and Evaluation contribution bullets', () => {
+    render(<ThesisPage />);
+    expect(screen.getByText(/^Design:/)).toBeInTheDocument();
+    expect(screen.getByText(/^Engineering:/)).toBeInTheDocument();
+    expect(screen.getByText(/^Evaluation:/)).toBeInTheDocument();
+  });
+
+  it('links to the thesis GitHub repository', () => {
+    render(<ThesisPage />);
+    expect(screen.getByRole('link', { name: 'View on GitHub' })).toHaveAttribute(
+      'href',
+      'https://github.com/MD-Moinuddin/Masters-Thesis',
+    );
+  });
 });

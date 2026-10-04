@@ -21,27 +21,48 @@ export default function ThesisPage() {
         <section>
           <h2 className="text-sm font-semibold uppercase tracking-wide opacity-60">Overview</h2>
           <p className="mt-2 leading-relaxed">
-            For my Master&apos;s thesis at the University of Bamberg, I studied whether TARA - a state-machine
-            replication protocol expressed as a stream-processing dataflow - generalizes beyond the engine it
-            was originally designed for. I designed and engineered Gumti, a full realization of that protocol
-            on Apache Flink, covering its design, engineering, and evaluation.
+            For my Master&apos;s thesis at the University of Bamberg, I studied whether TARA, a state-machine
+            replication protocol expressed as a stream-processing dataflow, generalizes beyond the engine it
+            was originally designed for.
           </p>
+        </section>
+        <section>
+          <h2 className="text-sm font-semibold uppercase tracking-wide opacity-60">My Contribution</h2>
+          <p className="mt-2 leading-relaxed">
+            I designed and engineered Gumti, a full realization on Apache Flink, contributing on three fronts:
+          </p>
+          <ul className="mt-2 list-disc list-outside space-y-1.5 pl-4 leading-relaxed marker:text-accent-text dark:marker:text-accent">
+            <li>
+              Design: mapping the protocol&apos;s nodes onto Flink&apos;s operator model, solving what Flink
+              lacks - engineered-key routing, ZooKeeper replica discovery, and network feedback loops around
+              its acyclic dataflow.
+            </li>
+            <li>
+              Engineering: a substantial Java implementation of the consensus, view-change, and
+              garbage-collection sub-protocols as one distributed Flink job.
+            </li>
+            <li>Evaluation: a systematic study of throughput, latency, and fault tolerance under load and injected failures.</li>
+          </ul>
         </section>
         <section>
           <h2 className="text-sm font-semibold uppercase tracking-wide opacity-60">Results</h2>
           <p className="mt-2 leading-relaxed">
-            Gumti sustains ~5,300 requests/second at a ~3ms latency floor and recovers from leader failures in
-            under 5 seconds with zero request loss - showing that a single engine parameter can shape
-            performance as much as the protocol itself.
+            Gumti sustains ~5,300 req/s at a ~3 ms latency floor and recovers from leader failures in ~5 s with
+            no requests lost, showing a single engine parameter can shape performance as much as the protocol
+            itself.
           </p>
         </section>
-        <section>
-          <h2 className="text-sm font-semibold uppercase tracking-wide opacity-60">Full write-up</h2>
-          <p className="mt-2 leading-relaxed">
-            The full thesis details, source code, and benchmarks are being added here - check back soon, or
-            reach out directly in the meantime.
-          </p>
-        </section>
+      </div>
+
+      <div className="mt-10 flex gap-4 text-sm">
+        <a
+          href="https://github.com/MD-Moinuddin/Masters-Thesis"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full bg-ink px-5 py-2 font-semibold text-paper dark:bg-snow dark:text-canvas"
+        >
+          View on GitHub
+        </a>
       </div>
     </article>
   );
