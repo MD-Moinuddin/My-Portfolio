@@ -7,7 +7,7 @@ interface SkillsProps {
 
 export function Skills({ groups }: SkillsProps) {
   return (
-    <section id="skills" className="mx-auto max-w-2xl px-6 py-16">
+    <section id="skills" className="mx-auto max-w-2xl px-6 py-12">
       <h2 className="text-sm font-semibold uppercase tracking-[0.2em] opacity-60">Skills</h2>
       <div className="mt-8 space-y-6">
         {groups.map((group) => (
