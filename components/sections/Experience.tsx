@@ -14,8 +14,11 @@ export function Experience({ entries }: ExperienceProps) {
           <li key={`${entry.company}-${entry.startDate}`}>
             <RevealOnScroll>
               <p className="text-xs opacity-60">{formatRange(entry)}</p>
-              <h3 className="mt-1 text-lg font-semibold">
-                {entry.role} · {entry.company}
+              <h3 className="mt-1">
+                <span className="block text-lg font-semibold">{entry.role}</span>
+                <span className="block text-sm font-medium text-accent-text dark:text-accent">
+                  {entry.company}
+                </span>
               </h3>
               <ul className="mt-2 list-disc list-outside space-y-1.5 pl-4 text-sm opacity-80 marker:text-accent-text dark:marker:text-accent">
                 {entry.highlights.map((highlight) => (

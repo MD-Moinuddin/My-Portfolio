@@ -11,9 +11,11 @@ const entries: ExperienceEntry[] = [
 describe('Experience', () => {
   it('renders every entry with its role, company, and date range', () => {
     render(<Experience entries={entries} />);
-    expect(screen.getByText('Frontend Engineer · Acme Co')).toBeInTheDocument();
+    expect(screen.getByText('Frontend Engineer')).toBeInTheDocument();
+    expect(screen.getByText('Acme Co')).toBeInTheDocument();
     expect(screen.getByText('Jan 2022 - Present')).toBeInTheDocument();
-    expect(screen.getByText('Junior Developer · Beta Inc')).toBeInTheDocument();
+    expect(screen.getByText('Junior Developer')).toBeInTheDocument();
+    expect(screen.getByText('Beta Inc')).toBeInTheDocument();
     expect(screen.getByText('Jan 2020 - Dec 2021')).toBeInTheDocument();
   });
 
