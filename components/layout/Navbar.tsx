@@ -10,8 +10,12 @@ const NAV_LINKS = [
   { href: '/#education', label: 'Education' },
   { href: '/#skills', label: 'Skills' },
   { href: '/#projects', label: 'Projects' },
+  { href: '/thesis', label: 'Thesis' },
   { href: '/#contact', label: 'Contact' },
 ];
+
+const LINK_STYLES =
+  'relative py-1 opacity-70 transition-opacity after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-accent-text after:transition-transform after:duration-200 hover:opacity-100 hover:after:scale-x-100 dark:after:bg-accent';
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -19,7 +23,10 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-paper/90 backdrop-blur dark:border-snow/10 dark:bg-canvas/90">
       <nav aria-label="Primary" className="mx-auto flex max-w-2xl items-center justify-between gap-4 px-6 py-4 text-sm">
-        <Link href="/" className="font-semibold tracking-widest">
+        <Link
+          href="/"
+          className="bg-gradient-to-r from-ink to-accent-text bg-clip-text text-lg font-bold tracking-tight text-transparent dark:from-snow dark:to-accent"
+        >
           MD.
         </Link>
 
@@ -33,23 +40,19 @@ export function Navbar() {
           >
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <a href={link.href} onClick={() => setOpen(false)}>
+                <Link href={link.href} onClick={() => setOpen(false)} className={LINK_STYLES}>
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
-            <li>
-              <Link href="/thesis" onClick={() => setOpen(false)}>
-                Thesis
-              </Link>
-            </li>
+            <li aria-hidden="true" className="hidden h-4 w-px bg-ink/15 dark:bg-snow/15 sm:block" />
             <li>
               <a
                 href="/cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="inline-block rounded-full border border-accent-text px-3 py-1 text-xs dark:border-accent"
+                className="inline-block rounded-full border border-accent-text px-3 py-1 text-xs transition-colors hover:bg-accent-text/10 dark:border-accent dark:hover:bg-accent/10"
               >
                 Resume
               </a>
