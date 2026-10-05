@@ -16,6 +16,8 @@ const entries: EducationEntry[] = [
     startDate: '2022-04',
     endDate: '2026-08',
     highlights: ['Wrote a thesis on distributed systems.'],
+    grade: 'Grade: 2.7 (1.0 is highest)',
+    thesisGrade: 'Thesis grade: 2.1 (1.0 is highest)',
   },
 ];
 
@@ -38,5 +40,17 @@ describe('Education', () => {
   it('renders entries without highlights without a bulleted list', () => {
     const { container } = render(<Education entries={[entries[0]]} />);
     expect(container.querySelector('ul')).not.toBeInTheDocument();
+  });
+
+  it('renders the grade and a separate thesis grade when both are present', () => {
+    render(<Education entries={entries} />);
+    expect(screen.getByText('Grade: 2.7 (1.0 is highest)')).toBeInTheDocument();
+    expect(screen.getByText('Thesis grade: 2.1 (1.0 is highest)')).toBeInTheDocument();
+  });
+
+  it('omits the grade line entirely when no grade or thesis grade is given', () => {
+    const { container } = render(<Education entries={[entries[0]]} />);
+    expect(screen.queryByText(/is highest/)).not.toBeInTheDocument();
+    expect(container.textContent).not.toContain('Grade');
   });
 });

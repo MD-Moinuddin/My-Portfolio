@@ -12,6 +12,12 @@ describe('education data', () => {
       expect(entry.degree.length).toBeGreaterThan(0);
     });
   });
+
+  it('gives the Master\'s entry both a grade and a separate thesis grade', () => {
+    const masters = education.find((entry) => entry.degree.includes('Master of Science'));
+    expect(masters?.grade).toBeTruthy();
+    expect(masters?.thesisGrade).toBeTruthy();
+  });
 });
 
 describe('formatRange', () => {

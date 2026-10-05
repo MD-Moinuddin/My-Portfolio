@@ -23,6 +23,12 @@ export function Education({ entries }: EducationProps) {
                   ))}
                 </ul>
               )}
+              {(entry.grade || entry.thesisGrade) && (
+                <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs opacity-60">
+                  {entry.grade && <span>{entry.grade}</span>}
+                  {entry.thesisGrade && <span>{entry.thesisGrade}</span>}
+                </div>
+              )}
             </RevealOnScroll>
           </li>
         ))}

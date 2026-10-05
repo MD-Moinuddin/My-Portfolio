@@ -4,6 +4,8 @@ export interface EducationEntry {
   startDate: string;
   endDate?: string;
   highlights?: string[];
+  grade?: string;
+  thesisGrade?: string;
 }
 
 export const education: EducationEntry[] = [
@@ -12,12 +14,15 @@ export const education: EducationEntry[] = [
     degree: 'Master of Science (MS), International Software System Science',
     startDate: '2022-04',
     endDate: '2026-08',
+    grade: 'Grade: 2.7 (1.0 is highest)',
+    thesisGrade: 'Thesis grade: 2.1 (1.0 is highest)',
   },
   {
     institution: 'American International University-Bangladesh',
     degree: 'Bachelor of Science (BS), Computer Science and Software Engineering',
     startDate: '2014',
     endDate: '2017',
+    grade: 'GPA: 3.14 (4.0 is highest)',
   },
 ];
 
