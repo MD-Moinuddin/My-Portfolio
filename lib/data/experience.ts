@@ -14,7 +14,7 @@ export const experience: ExperienceEntry[] = [
     highlights: [
       'Building Life Tracker, a secure, accessible personal dashboard app with React, Node.js, PostgreSQL, and Docker, including JWT authentication and a full CI/CD pipeline via GitHub Actions.',
       "Followed OWASP-aligned auth practices (in-memory access tokens, httpOnly refresh cookies, bcrypt hashing, rate limiting) and automated accessibility testing with jest-axe toward WCAG 2.1 AA compliance.",
-      'Deployed across Vercel (frontend), Render (backend), and Neon (Postgres) - live at life-tracker-brown-one.vercel.app.',
+      'Deployed across Vercel (frontend), Render (backend), and Neon (Postgres) - live at lifetracker-md.vercel.app.',
     ],
   },
   {
