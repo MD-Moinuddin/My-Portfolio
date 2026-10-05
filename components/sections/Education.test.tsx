@@ -20,11 +20,13 @@ const entries: EducationEntry[] = [
 ];
 
 describe('Education', () => {
-  it('renders every entry with its degree, institution, and date range', () => {
+  it('renders every entry with its institution, degree, and date range as separate elements', () => {
     render(<Education entries={entries} />);
-    expect(screen.getByText('B.Sc. Computer Science · Acme University')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: 'Acme University' })).toBeInTheDocument();
+    expect(screen.getByText('B.Sc. Computer Science')).toBeInTheDocument();
     expect(screen.getByText('2014 - 2017')).toBeInTheDocument();
-    expect(screen.getByText('M.Sc. Software Engineering · Beta University')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: 'Beta University' })).toBeInTheDocument();
+    expect(screen.getByText('M.Sc. Software Engineering')).toBeInTheDocument();
     expect(screen.getByText('Apr 2022 - Aug 2026')).toBeInTheDocument();
   });
 

@@ -14,9 +14,8 @@ export function Education({ entries }: EducationProps) {
           <li key={`${entry.institution}-${entry.startDate}`}>
             <RevealOnScroll>
               <p className="text-xs opacity-60">{formatRange(entry)}</p>
-              <h3 className="mt-1 text-lg font-semibold">
-                {entry.degree} · {entry.institution}
-              </h3>
+              <h3 className="mt-1 text-lg font-semibold">{entry.institution}</h3>
+              <p className="mt-0.5 text-sm font-medium text-accent-text dark:text-accent">{entry.degree}</p>
               {entry.highlights && entry.highlights.length > 0 && (
                 <ul className="mt-2 list-disc list-outside space-y-1.5 pl-4 text-sm opacity-80 marker:text-accent-text dark:marker:text-accent">
                   {entry.highlights.map((highlight) => (
