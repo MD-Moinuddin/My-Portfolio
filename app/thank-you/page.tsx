@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Message Sent',
@@ -14,12 +13,15 @@ export default function ThankYouPage() {
       <p className="mt-4 max-w-md text-lg leading-relaxed opacity-70">
         Thanks for reaching out - your message has been sent. I&apos;ll get back to you soon.
       </p>
-      <Link
+      {/* A plain anchor forces a full page reload (not Next's client-side router
+          cache), so the contact form always renders fresh and empty. */}
+      {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- intentional full reload, see comment above */}
+      <a
         href="/#contact"
         className="mt-8 rounded-full bg-ink px-6 py-2 font-semibold text-paper dark:bg-snow dark:text-canvas"
       >
         Back
-      </Link>
+      </a>
     </section>
   );
 }
