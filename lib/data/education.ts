@@ -15,7 +15,7 @@ export const education: EducationEntry[] = [
   },
   {
     institution: 'American International University-Bangladesh',
-    degree: 'Bachelor of Science (BS), Computer Science',
+    degree: 'Bachelor of Science (BS), Computer Science and Software Engineering',
     startDate: '2014',
     endDate: '2017',
   },
