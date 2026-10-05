@@ -15,4 +15,16 @@ describe('Hero', () => {
     expect(screen.getByRole('link', { name: 'View projects' })).toHaveAttribute('href', '#projects');
     expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '#contact');
   });
+
+  it('renders the availability badge when provided', () => {
+    render(
+      <Hero name="Jane Doe" role="Test Engineer" description="A description." availability="Open to new roles" />,
+    );
+    expect(screen.getByText('Open to new roles')).toBeInTheDocument();
+  });
+
+  it('omits the availability badge when not provided', () => {
+    render(<Hero name="Jane Doe" role="Test Engineer" description="A description." />);
+    expect(screen.queryByText(/Open to/)).not.toBeInTheDocument();
+  });
 });

@@ -4,9 +4,10 @@ interface HeroProps {
   name: string;
   role: string;
   description: string;
+  availability?: string;
 }
 
-export function Hero({ name, role, description }: HeroProps) {
+export function Hero({ name, role, description, availability }: HeroProps) {
   return (
     <section id="about" className="mx-auto max-w-2xl px-6 pb-16 pt-20">
       <RevealOnScroll>
@@ -22,6 +23,15 @@ export function Hero({ name, role, description }: HeroProps) {
           className="mt-5 h-1 w-16 rounded-full bg-gradient-to-r from-accent-text to-accent dark:from-accent dark:to-accent-text"
         />
         <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed opacity-80">{description}</p>
+        {availability && (
+          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent-text/30 bg-accent-text/5 px-4 py-1.5 text-sm font-medium text-accent-text dark:border-accent/30 dark:bg-accent/5 dark:text-accent">
+            <span aria-hidden="true" className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-text/60 dark:bg-accent/60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-text dark:bg-accent" />
+            </span>
+            {availability}
+          </div>
+        )}
         <div className="mt-8 flex flex-wrap gap-4 text-sm">
           <a
             href="#projects"

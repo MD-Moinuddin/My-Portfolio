@@ -13,7 +13,7 @@ import { site } from '@/lib/site';
 export default function HomePage() {
   return (
     <>
-      <Hero name={site.name} role="Software Engineer" description={site.description} />
+      <Hero name={site.name} role="Software Engineer" description={site.tagline} availability={site.availability} />
       <Experience entries={experience} />
       <Education entries={education} />
       <Skills groups={skillGroups} />
