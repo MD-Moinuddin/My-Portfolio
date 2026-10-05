@@ -1,22 +1,12 @@
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi, afterEach } from 'vitest';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { Contact } from './Contact';
-import { site } from '@/lib/site';
+
+afterEach(() => {
+  vi.unstubAllGlobals();
+});
 
 describe('Contact', () => {
-  it('posts to the Formspree endpoint', () => {
-    const { container } = render(<Contact />);
-    const form = container.querySelector('form');
-    expect(form).toHaveAttribute('action', 'https://formspree.io/f/mqkvbqlw');
-    expect(form).toHaveAttribute('method', 'POST');
-  });
-
-  it('redirects Formspree to the thank-you page on success', () => {
-    const { container } = render(<Contact />);
-    const redirectInput = container.querySelector('input[name="_next"]');
-    expect(redirectInput).toHaveAttribute('value', `${site.url}/thank-you`);
-  });
-
   it('has labeled, required name/email/message fields', () => {
     render(<Contact />);
     expect(screen.getByLabelText('Full name')).toBeRequired();
@@ -30,5 +20,44 @@ describe('Contact', () => {
       'href',
       'mailto:moinuddinmd067@gmail.com',
     );
+  });
+
+  it('submits via fetch to the Formspree endpoint, shows a success toast, and clears the form without navigating', async () => {
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true });
+    vi.stubGlobal('fetch', fetchMock);
+
+    const { container } = render(<Contact />);
+    fireEvent.change(screen.getByLabelText('Full name'), { target: { value: 'Jane Doe' } });
+    fireEvent.change(screen.getByLabelText('Email address'), { target: { value: 'jane@example.com' } });
+    fireEvent.change(screen.getByLabelText('Message'), { target: { value: 'Hello there' } });
+
+    fireEvent.submit(container.querySelector('form')!);
+
+    await waitFor(() => {
+      expect(screen.getByRole('status')).toHaveTextContent('Message sent successfully!');
+    });
+
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(fetchMock.mock.calls[0][0]).toBe('https://formspree.io/f/mqkvbqlw');
+    expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: 'POST' });
+    expect(screen.getByLabelText('Full name')).toHaveValue('');
+    expect(screen.getByLabelText('Email address')).toHaveValue('');
+    expect(screen.getByLabelText('Message')).toHaveValue('');
+  });
+
+  it('shows an error toast when the submission fails, without clearing the form', async () => {
+    const fetchMock = vi.fn().mockResolvedValue({ ok: false });
+    vi.stubGlobal('fetch', fetchMock);
+
+    const { container } = render(<Contact />);
+    fireEvent.change(screen.getByLabelText('Full name'), { target: { value: 'Jane Doe' } });
+
+    fireEvent.submit(container.querySelector('form')!);
+
+    await waitFor(() => {
+      expect(screen.getByRole('status')).toHaveTextContent(/went wrong/i);
+    });
+
+    expect(screen.getByLabelText('Full name')).toHaveValue('Jane Doe');
   });
 });
