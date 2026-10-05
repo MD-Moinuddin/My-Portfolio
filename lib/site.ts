@@ -2,9 +2,9 @@ export const site = {
   name: 'MD Moinuddin',
   title: 'MD Moinuddin - Software Engineer',
   description:
-    'Software engineer with 4+ years of hands-on industry experience and an M.Sc. in International Software System Science from the University of Bamberg - currently seeking Software Engineering or Web Development opportunities.',
+    'Software engineer with 4+ years of hands-on industry experience and an M.Sc. in International Software System Science from Otto-Friedrich-Universität Bamberg - currently seeking Software Engineering or Web Development opportunities.',
   tagline:
-    'Software engineer with 4+ years of hands-on industry experience and an M.Sc. in International Software System Science from the University of Bamberg.',
+    'Software engineer with 4+ years of hands-on industry experience and an M.Sc. in International Software System Science from Otto-Friedrich-Universität Bamberg.',
   availability: 'Open to Software Engineering & Web Development opportunities',
   url: 'https://md-moinuddin.vercel.app',
   email: 'moinuddinmd067@gmail.com',
