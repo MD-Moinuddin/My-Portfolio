@@ -38,11 +38,7 @@ export function Navbar() {
               </li>
             ))}
             <li>
-              <Link
-                href="/thesis"
-                onClick={() => setOpen(false)}
-                className="inline-block rounded-full border border-accent-text px-3 py-1 text-xs dark:border-accent"
-              >
+              <Link href="/thesis" onClick={() => setOpen(false)}>
                 Thesis
               </Link>
             </li>
