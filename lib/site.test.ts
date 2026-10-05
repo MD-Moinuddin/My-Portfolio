@@ -18,4 +18,10 @@ describe('site constants', () => {
     expect(site.social.linkedin).toContain('linkedin.com');
     expect(site.social.github).toBe('https://github.com/MD-Moinuddin');
   });
+
+  it('has a tagline and availability line separate from the full meta description', () => {
+    expect(site.tagline.length).toBeGreaterThan(0);
+    expect(site.availability.length).toBeGreaterThan(0);
+    expect(site.description).not.toBe(site.tagline);
+  });
 });

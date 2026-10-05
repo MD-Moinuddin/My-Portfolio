@@ -23,6 +23,7 @@ export const projects: Project[] = [
     stack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker'],
     coverImage: '/images/projects/life-tracker.svg',
     liveUrl: 'https://life-tracker-brown-one.vercel.app/signup',
+    githubUrl: 'https://github.com/MD-Moinuddin/life-tracker',
     caseStudy: {
       problem:
         'Needed a secure, accessible foundation for a personal life-tracking app. V1 focuses on full authentication and a protected shell for future modules - work schedule, fitness, nutrition, and finance - planned for later versions.',
@@ -66,6 +67,7 @@ export const projects: Project[] = [
     stack: ['Angular 13', 'SCSS', 'HTML5', 'Bootstrap', 'Ant Design'],
     coverImage: '/images/projects/pristine.png',
     liveUrl: 'https://pristinesolutionsbd.com/',
+    githubUrl: 'https://github.com/pranabumal/pristineworldwide',
     caseStudy: {
       problem:
         'Pristine Solutions BD needed a full corporate website built from the ground up, translating static brand and content requirements into a responsive, production-ready web application.',
@@ -126,6 +128,7 @@ export const projects: Project[] = [
     stack: ['HTML5', 'Sass', 'JavaScript'],
     coverImage: '/images/projects/zone.png',
     liveUrl: 'https://www.zoneproductionstudios.com/',
+    githubUrl: 'https://github.com/MD-Moinuddin/zone',
     caseStudy: {
       problem: 'Zone Production Studios needed a lightweight marketing site to showcase their production work without a heavy framework.',
       contribution: ['Built the site from scratch with HTML5, Sass, and vanilla JavaScript, focused on fast load times.'],

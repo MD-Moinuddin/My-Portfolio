@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Master Thesis',
   description:
-    "Gumti: a full realization of the TARA state-machine replication protocol on Apache Flink, built for my Master's thesis at the University of Bamberg.",
+    "Gumti: a full realization of the TARA state-machine replication protocol on Apache Flink, built for my Master's thesis at Otto-Friedrich-Universität Bamberg.",
 };
 
 export default function ThesisPage() {
@@ -21,7 +21,7 @@ export default function ThesisPage() {
         <section>
           <h2 className="text-sm font-semibold uppercase tracking-wide opacity-60">Overview</h2>
           <p className="mt-2 leading-relaxed">
-            For my Master&apos;s thesis at the University of Bamberg, I studied whether TARA, a state-machine
+            For my Master&apos;s thesis at Otto-Friedrich-Universität Bamberg, I studied whether TARA, a state-machine
             replication protocol expressed as a stream-processing dataflow, generalizes beyond the engine it
             was originally designed for.
           </p>
