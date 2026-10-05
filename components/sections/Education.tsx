@@ -13,7 +13,9 @@ export function Education({ entries }: EducationProps) {
         {entries.map((entry) => (
           <li key={`${entry.institution}-${entry.startDate}`}>
             <RevealOnScroll>
-              <p className="text-xs opacity-60">{formatRange(entry)}</p>
+              <p className="text-xs opacity-60">
+                {formatRange(entry)} · {entry.location}
+              </p>
               <h3 className="mt-1 text-lg font-semibold">{entry.institution}</h3>
               <p className="mt-0.5 text-sm font-medium text-accent-text dark:text-accent">{entry.degree}</p>
               {entry.highlights && entry.highlights.length > 0 && (

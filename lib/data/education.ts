@@ -1,6 +1,7 @@
 export interface EducationEntry {
   institution: string;
   degree: string;
+  location: string;
   startDate: string;
   endDate?: string;
   highlights?: string[];
@@ -12,6 +13,7 @@ export const education: EducationEntry[] = [
   {
     institution: 'Otto-Friedrich-Universität Bamberg',
     degree: 'Master of Science (MS), International Software System Science',
+    location: 'Bamberg, Germany',
     startDate: '2022-04',
     endDate: '2026-08',
     grade: 'Grade: 2.7 (1.0 is highest)',
@@ -20,8 +22,9 @@ export const education: EducationEntry[] = [
   {
     institution: 'American International University-Bangladesh',
     degree: 'Bachelor of Science (BS), Computer Science and Software Engineering',
-    startDate: '2014',
-    endDate: '2017',
+    location: 'Dhaka, Bangladesh',
+    startDate: '2014-01',
+    endDate: '2017-12',
     grade: 'GPA: 3.14 (4.0 is highest)',
   },
 ];

@@ -6,10 +6,11 @@ describe('education data', () => {
     expect(education.length).toBeGreaterThan(0);
   });
 
-  it('gives every entry an institution and a degree', () => {
+  it('gives every entry an institution, a degree, and a location', () => {
     education.forEach((entry) => {
       expect(entry.institution.length).toBeGreaterThan(0);
       expect(entry.degree.length).toBeGreaterThan(0);
+      expect(entry.location.length).toBeGreaterThan(0);
     });
   });
 
@@ -22,16 +23,20 @@ describe('education data', () => {
 
 describe('formatRange', () => {
   it('shows "Present" when there is no endDate', () => {
-    expect(formatRange({ institution: 'X', degree: 'Y', startDate: '2022-04' })).toBe('Apr 2022 - Present');
-  });
-
-  it('shows month and year for both dates when both have months', () => {
-    expect(formatRange({ institution: 'X', degree: 'Y', startDate: '2022-04', endDate: '2026-08' })).toBe(
-      'Apr 2022 - Aug 2026',
+    expect(formatRange({ institution: 'X', degree: 'Y', location: 'Z', startDate: '2022-04' })).toBe(
+      'Apr 2022 - Present',
     );
   });
 
+  it('shows month and year for both dates when both have months', () => {
+    expect(
+      formatRange({ institution: 'X', degree: 'Y', location: 'Z', startDate: '2022-04', endDate: '2026-08' }),
+    ).toBe('Apr 2022 - Aug 2026');
+  });
+
   it('shows plain years when dates have no month', () => {
-    expect(formatRange({ institution: 'X', degree: 'Y', startDate: '2014', endDate: '2017' })).toBe('2014 - 2017');
+    expect(formatRange({ institution: 'X', degree: 'Y', location: 'Z', startDate: '2014', endDate: '2017' })).toBe(
+      '2014 - 2017',
+    );
   });
 });

@@ -7,12 +7,14 @@ const entries: EducationEntry[] = [
   {
     institution: 'Acme University',
     degree: 'B.Sc. Computer Science',
-    startDate: '2014',
-    endDate: '2017',
+    location: 'Testville, Testland',
+    startDate: '2014-01',
+    endDate: '2017-12',
   },
   {
     institution: 'Beta University',
     degree: 'M.Sc. Software Engineering',
+    location: 'Exampletown, Exampleland',
     startDate: '2022-04',
     endDate: '2026-08',
     highlights: ['Wrote a thesis on distributed systems.'],
@@ -26,10 +28,10 @@ describe('Education', () => {
     render(<Education entries={entries} />);
     expect(screen.getByRole('heading', { level: 3, name: 'Acme University' })).toBeInTheDocument();
     expect(screen.getByText('B.Sc. Computer Science')).toBeInTheDocument();
-    expect(screen.getByText('2014 - 2017')).toBeInTheDocument();
+    expect(screen.getByText('Jan 2014 - Dec 2017 · Testville, Testland')).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 3, name: 'Beta University' })).toBeInTheDocument();
     expect(screen.getByText('M.Sc. Software Engineering')).toBeInTheDocument();
-    expect(screen.getByText('Apr 2022 - Aug 2026')).toBeInTheDocument();
+    expect(screen.getByText('Apr 2022 - Aug 2026 · Exampletown, Exampleland')).toBeInTheDocument();
   });
 
   it('renders highlights when present', () => {
