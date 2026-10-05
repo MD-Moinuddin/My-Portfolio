@@ -11,6 +11,7 @@ export function Contact() {
         </a>
       </p>
       <form action={site.contactFormAction} method="POST" className="mt-8 space-y-4">
+        <input type="hidden" name="_next" value={`${site.url}/thank-you`} />
         <div>
           <label htmlFor="name" className="block text-sm font-medium">
             Full name
