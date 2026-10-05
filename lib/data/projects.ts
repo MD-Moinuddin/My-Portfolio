@@ -22,7 +22,7 @@ export const projects: Project[] = [
     summary: 'A secure, accessible personal dashboard app with JWT authentication, built with React, Node.js, PostgreSQL, and Docker.',
     stack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker'],
     coverImage: '/images/projects/life-tracker.svg',
-    liveUrl: 'https://life-tracker-brown-one.vercel.app/signup',
+    liveUrl: 'https://lifetracker-md.vercel.app/',
     githubUrl: 'https://github.com/MD-Moinuddin/life-tracker',
     caseStudy: {
       problem:
