@@ -20,6 +20,7 @@ describe('Navbar', () => {
   it('links to every homepage section with a root-relative anchor', () => {
     renderNavbar();
     expect(screen.getByRole('link', { name: 'Experience' })).toHaveAttribute('href', '/#experience');
+    expect(screen.getByRole('link', { name: 'Education' })).toHaveAttribute('href', '/#education');
     expect(screen.getByRole('link', { name: 'Skills' })).toHaveAttribute('href', '/#skills');
     expect(screen.getByRole('link', { name: 'Projects' })).toHaveAttribute('href', '/#projects');
     expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/#contact');
@@ -54,7 +55,7 @@ describe('Navbar', () => {
     // Collapsed below `sm`, visible from `sm` up — but always in the DOM.
     expect(list.className).toContain('hidden');
     expect(list.className).toContain('sm:flex');
-    expect(list.querySelectorAll('a')).toHaveLength(6);
+    expect(list.querySelectorAll('a')).toHaveLength(7);
   });
 
   it('expands and collapses the mobile menu when the toggle is pressed', () => {
