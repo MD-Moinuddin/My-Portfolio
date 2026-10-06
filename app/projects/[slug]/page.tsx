@@ -33,7 +33,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   if (!project) notFound();
 
   return (
-    <article className="mx-auto max-w-2xl px-6 py-16">
+    <article className="mx-auto max-w-3xl px-6 py-16">
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-text dark:text-accent">
         {project.stack.join(' · ')}
       </p>

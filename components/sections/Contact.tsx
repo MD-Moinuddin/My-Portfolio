@@ -42,7 +42,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="mx-auto max-w-2xl px-6 py-16">
+    <section id="contact" className="mx-auto max-w-3xl px-6 py-16">
       <h2 className="text-sm font-semibold uppercase tracking-[0.2em] opacity-60">Contact</h2>
       <p className="mt-4 text-lg">
         Have a project or role in mind?{' '}

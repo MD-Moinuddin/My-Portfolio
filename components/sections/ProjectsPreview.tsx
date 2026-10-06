@@ -11,7 +11,7 @@ interface ProjectsPreviewProps {
 export function ProjectsPreview({ projects, limit = 4 }: ProjectsPreviewProps) {
   const visible = projects.slice(0, limit);
   return (
-    <section id="projects" className="mx-auto max-w-2xl px-6 py-16">
+    <section id="projects" className="mx-auto max-w-3xl px-6 py-16">
       <div className="flex items-baseline justify-between">
         <h2 className="text-sm font-semibold uppercase tracking-[0.2em] opacity-60">Selected projects</h2>
         <Link href="/projects" className="text-sm underline">
