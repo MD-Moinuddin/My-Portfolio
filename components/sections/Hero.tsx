@@ -9,7 +9,7 @@ interface HeroProps {
 
 export function Hero({ name, role, description, availability }: HeroProps) {
   return (
-    <section id="about" className="mx-auto max-w-2xl px-6 pb-16 pt-20">
+    <section id="about" className="mx-auto max-w-3xl px-6 pb-16 pt-20">
       <RevealOnScroll>
         <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent-text dark:text-accent">
           <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-accent-text dark:bg-accent" />

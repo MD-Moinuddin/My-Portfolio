@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <section className="mx-auto max-w-2xl px-6 py-16">
+    <section className="mx-auto max-w-3xl px-6 py-16">
       <h1 className="text-3xl font-bold">Projects</h1>
       <div className="mt-8">
         {projects.map((project) => (

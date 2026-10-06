@@ -22,7 +22,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-paper/90 backdrop-blur dark:border-snow/10 dark:bg-canvas/90">
-      <nav aria-label="Primary" className="mx-auto flex max-w-2xl items-center justify-between gap-4 px-6 py-4 text-sm">
+      <nav aria-label="Primary" className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-6 py-4 text-sm">
         <Link
           href="/"
           className="bg-gradient-to-r from-ink to-accent-text bg-clip-text text-lg font-bold tracking-tight text-transparent dark:from-snow dark:to-accent"
