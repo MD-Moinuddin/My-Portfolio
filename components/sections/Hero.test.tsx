@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Hero } from './Hero';
+import { site } from '@/lib/site';
 
 describe('Hero', () => {
   it('renders the name, role, and description', () => {
@@ -10,10 +11,12 @@ describe('Hero', () => {
     expect(screen.getByText('A description.')).toBeInTheDocument();
   });
 
-  it('links its CTAs to the projects and contact sections', () => {
+  it('links to projects and to LinkedIn and GitHub via icon links', () => {
     render(<Hero name="Jane Doe" role="Test Engineer" description="A description." />);
     expect(screen.getByRole('link', { name: 'View projects' })).toHaveAttribute('href', '#projects');
-    expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '#contact');
+    expect(screen.queryByRole('link', { name: 'Contact' })).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute('href', site.social.linkedin);
+    expect(screen.getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', site.social.github);
   });
 
   it('renders the availability badge when provided', () => {
