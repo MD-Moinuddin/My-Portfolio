@@ -7,8 +7,8 @@ describe('projects data', () => {
     expect(new Set(slugs).size).toBe(slugs.length);
   });
 
-  it('has all 9 current projects', () => {
-    expect(projects).toHaveLength(9);
+  it('has all 10 current projects', () => {
+    expect(projects).toHaveLength(10);
   });
 
   it('gives every project a non-empty case study', () => {
