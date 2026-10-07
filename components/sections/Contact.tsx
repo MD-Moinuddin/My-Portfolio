@@ -21,6 +21,15 @@ function EmailIcon() {
   );
 }
 
+function ResumeIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+      <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+      <path d="M14 3v5h5M9 13h6M9 17h6" />
+    </svg>
+  );
+}
+
 function LinkedInIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
@@ -142,6 +151,15 @@ export function Contact() {
             <span>
               <span className="block text-xs opacity-60">GitHub</span>
               <span className="block font-semibold">See my code</span>
+            </span>
+          </a>
+          <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className={itemClass}>
+            <span className={iconClass}>
+              <ResumeIcon />
+            </span>
+            <span>
+              <span className="block text-xs opacity-60">Resume</span>
+              <span className="block font-semibold">Download CV (PDF)</span>
             </span>
           </a>
           <p className="mt-1 px-1 text-xs opacity-60">Usually replies within 1-2 days.</p>
