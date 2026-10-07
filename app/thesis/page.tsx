@@ -59,9 +59,9 @@ export default function ThesisPage() {
           href="https://github.com/MD-Moinuddin/Masters-Thesis"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full bg-ink px-5 py-2 font-semibold text-paper dark:bg-snow dark:text-canvas"
+          className="rounded-full border border-ink/30 px-5 py-2 dark:border-snow/30"
         >
-          View on GitHub
+          View code
         </a>
       </div>
     </article>
