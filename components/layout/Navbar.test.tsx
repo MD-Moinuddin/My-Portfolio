@@ -33,9 +33,9 @@ describe('Navbar', () => {
     expect(resumeLink).toHaveAttribute('target', '_blank');
   });
 
-  it('links the highlighted Thesis button to /thesis', () => {
+  it('links Thesis to the home page thesis section', () => {
     renderNavbar();
-    expect(screen.getByRole('link', { name: 'Thesis' })).toHaveAttribute('href', '/thesis');
+    expect(screen.getByRole('link', { name: 'Thesis' })).toHaveAttribute('href', '/#thesis');
   });
 
   it('keeps the logo and theme toggle outside the collapsible link list', () => {

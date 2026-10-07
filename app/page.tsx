@@ -3,6 +3,7 @@ import { Experience } from '@/components/sections/Experience';
 import { Education } from '@/components/sections/Education';
 import { Skills } from '@/components/sections/Skills';
 import { ProjectsPreview } from '@/components/sections/ProjectsPreview';
+import { Thesis } from '@/components/sections/Thesis';
 import { Contact } from '@/components/sections/Contact';
 import { experience } from '@/lib/data/experience';
 import { education } from '@/lib/data/education';
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Education entries={education} />
       <Skills groups={skillGroups} />
       <ProjectsPreview projects={projects} limit={4} />
+      <Thesis />
       <Contact />
     </>
   );

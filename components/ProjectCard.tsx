@@ -9,17 +9,17 @@ const filledButton =
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-ink/10 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-text hover:shadow-lg hover:shadow-ink/5 dark:border-snow/10 dark:bg-white/[0.03] dark:hover:border-accent dark:hover:shadow-snow/5">
-      <div className="relative aspect-video overflow-hidden bg-ink/5 dark:bg-snow/5">
+    <article className="group relative flex h-full gap-4 overflow-hidden rounded-2xl p-4 sm:gap-5 sm:p-5 border border-ink/10 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-text hover:shadow-lg hover:shadow-ink/5 dark:border-snow/10 dark:bg-white/[0.03] dark:hover:border-accent dark:hover:shadow-snow/5">
+      <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-ink/5 sm:h-32 sm:w-32 dark:bg-snow/5">
         <Image
           src={project.coverImage}
           alt=""
           fill
-          sizes="(max-width: 768px) 100vw, 368px"
-          className="object-cover object-top"
+          sizes="128px"
+          className="object-contain"
         />
       </div>
-      <div className="flex flex-1 flex-col p-5">
+      <div className="flex min-w-0 flex-1 flex-col">
         <h3 className="text-lg font-semibold">
           <Link href={`/projects/${project.slug}`} className="after:absolute after:inset-0 group-hover:underline">
             {project.name}
@@ -37,7 +37,7 @@ export function ProjectCard({ project }: { project: Project }) {
           ))}
         </ul>
         {(project.githubUrl || project.liveUrl) && (
-          <div className="relative mt-auto flex flex-wrap gap-3 pt-5 text-sm">
+          <div className="relative mt-auto flex flex-wrap gap-3 pt-4 text-sm">
             {project.githubUrl && (
               <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className={outlineButton}>
                 View code

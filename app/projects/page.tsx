@@ -12,7 +12,7 @@ export default function ProjectsPage() {
   return (
     <section className="mx-auto max-w-3xl px-6 py-16">
       <h1 className="text-3xl font-bold">Projects</h1>
-      <div className="mt-8 grid gap-5 sm:grid-cols-2">
+      <div className="mt-8 grid gap-4">
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
