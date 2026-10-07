@@ -28,6 +28,13 @@ describe('Contact', () => {
     expect(screen.getByRole('link', { name: /GitHub/ })).toHaveAttribute('target', '_blank');
   });
 
+  it('links to the resume PDF in a new tab', () => {
+    render(<Contact />);
+    const resume = screen.getByRole('link', { name: /Download CV/ });
+    expect(resume).toHaveAttribute('href', '/cv.pdf');
+    expect(resume).toHaveAttribute('target', '_blank');
+  });
+
   it('copies the email address and confirms it', async () => {
     const writeText = vi.fn().mockResolvedValue(undefined);
     vi.stubGlobal('navigator', { clipboard: { writeText } });
