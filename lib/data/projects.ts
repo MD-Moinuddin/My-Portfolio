@@ -39,6 +39,28 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: 'portfolio',
+    name: 'Portfolio',
+    title: 'Personal Portfolio Website',
+    summary: 'This portfolio: a fast, accessible, responsive site with light and dark themes, built with Next.js, React, TypeScript, and Tailwind CSS.',
+    stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vitest'],
+    coverImage: '/images/projects/portfolio.png',
+    liveUrl: 'https://md-moinuddin-portfolio.vercel.app/',
+    githubUrl: 'https://github.com/MD-Moinuddin/My-Portfolio',
+    caseStudy: {
+      problem:
+        'Needed a single place to present my experience, education, projects, and Master thesis that is fast, accessible, and easy to keep up to date as my work grows.',
+      contribution: [
+        'Designed and built the site with Next.js (App Router), React, TypeScript, and Tailwind CSS, with all content driven from typed data files.',
+        'Implemented light and dark themes with theme-aware colors, backed by a contrast test, plus a skip link, semantic landmarks, and keyboard-friendly navigation.',
+        'Added per-page metadata, Open Graph images, a sitemap, robots rules, and Person structured data for search and sharing.',
+        'Covered components and pages with automated tests using Vitest and Testing Library, and deployed it on Vercel.',
+      ],
+      outcome:
+        'Live on Vercel, with source open on GitHub. It is the site you are looking at now, and it keeps growing with each new project and section.',
+    },
+  },
+  {
     slug: 'emporia',
     name: 'Emporia',
     title: 'Empowerment of Persons with Disabilities through ICT',
@@ -178,28 +200,6 @@ export const projects: Project[] = [
       problem: 'Craft needed a landing page template exploring a different visual style than Mogo, as a design practice project.',
       contribution: ['Designed and built the landing page with HTML5, Sass, and JavaScript.'],
       outcome: 'Published and viewable live, with source open on GitHub. A fuller write-up is coming in a future update.',
-    },
-  },
-  {
-    slug: 'portfolio',
-    name: 'Portfolio',
-    title: 'Personal Portfolio Website',
-    summary: 'This portfolio: a fast, accessible, responsive site with light and dark themes, built with Next.js, React, TypeScript, and Tailwind CSS.',
-    stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vitest'],
-    coverImage: '/images/projects/portfolio.png',
-    liveUrl: 'https://md-moinuddin-portfolio.vercel.app/',
-    githubUrl: 'https://github.com/MD-Moinuddin/My-Portfolio',
-    caseStudy: {
-      problem:
-        'Needed a single place to present my experience, education, projects, and Master thesis that is fast, accessible, and easy to keep up to date as my work grows.',
-      contribution: [
-        'Designed and built the site with Next.js (App Router), React, TypeScript, and Tailwind CSS, with all content driven from typed data files.',
-        'Implemented light and dark themes with theme-aware colors, backed by a contrast test, plus a skip link, semantic landmarks, and keyboard-friendly navigation.',
-        'Added per-page metadata, Open Graph images, a sitemap, robots rules, and Person structured data for search and sharing.',
-        'Covered components and pages with automated tests using Vitest and Testing Library, and deployed it on Vercel.',
-      ],
-      outcome:
-        'Live on Vercel, with source open on GitHub. It is the site you are looking at now, and it keeps growing with each new project and section.',
     },
   },
 ];
