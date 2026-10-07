@@ -12,7 +12,7 @@ export default function ThesisPage() {
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-text dark:text-accent">
         Master Thesis · Otto-Friedrich-Universität Bamberg
       </p>
-      <h1 className="mt-3 text-3xl font-bold">Gumti</h1>
+      <h1 className="mt-3 text-3xl font-bold">Adapting Stream-Based State-Machine Replication to Apache Flink (Gumti)</h1>
       <p className="mt-2 text-lg opacity-70">
         A full realization of the TARA state-machine replication protocol as a distributed Apache Flink job.
       </p>

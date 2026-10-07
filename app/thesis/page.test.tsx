@@ -5,7 +5,7 @@ import ThesisPage, { metadata } from './page';
 describe('ThesisPage', () => {
   it('renders the thesis title and overview', () => {
     render(<ThesisPage />);
-    expect(screen.getByRole('heading', { level: 1, name: 'Gumti' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: 'Adapting Stream-Based State-Machine Replication to Apache Flink (Gumti)' })).toBeInTheDocument();
     expect(screen.getAllByText(/TARA/).length).toBeGreaterThan(0);
   });
 
