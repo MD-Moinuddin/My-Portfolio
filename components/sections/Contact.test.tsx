@@ -16,10 +16,25 @@ describe('Contact', () => {
 
   it('shows a mailto link with the real contact email', () => {
     render(<Contact />);
-    expect(screen.getByRole('link', { name: 'moinuddinmd067@gmail.com' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /moinuddinmd067@gmail\.com/ })).toHaveAttribute(
       'href',
       'mailto:moinuddinmd067@gmail.com',
     );
+  });
+
+  it('links to LinkedIn and GitHub in new tabs', () => {
+    render(<Contact />);
+    expect(screen.getByRole('link', { name: /LinkedIn/ })).toHaveAttribute('target', '_blank');
+    expect(screen.getByRole('link', { name: /GitHub/ })).toHaveAttribute('target', '_blank');
+  });
+
+  it('copies the email address and confirms it', async () => {
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    vi.stubGlobal('navigator', { clipboard: { writeText } });
+    render(<Contact />);
+    fireEvent.click(screen.getByRole('button', { name: 'Copy' }));
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Copied!' })).toBeInTheDocument());
+    expect(writeText).toHaveBeenCalledWith('moinuddinmd067@gmail.com');
   });
 
   it('submits via fetch to the Formspree endpoint, shows a success toast, and clears the form without navigating', async () => {
