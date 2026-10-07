@@ -18,7 +18,7 @@ export function ProjectsPreview({ projects, limit = 4 }: ProjectsPreviewProps) {
           See all
         </Link>
       </div>
-      <div className="mt-6">
+      <div className="mt-6 grid gap-5 sm:grid-cols-2">
         {visible.map((project) => (
           <RevealOnScroll key={project.slug}>
             <ProjectCard project={project} />
