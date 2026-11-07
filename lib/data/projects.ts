@@ -18,24 +18,28 @@ export const projects: Project[] = [
   {
     slug: 'life-tracker',
     name: 'Life Tracker',
-    title: 'Secure, Accessible Personal Dashboard',
-    summary: 'A secure, accessible personal dashboard app with JWT authentication, built with React, Node.js, PostgreSQL, and Docker.',
-    stack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker'],
+    title: 'Work and Earnings Tracker for Part-Time Jobs',
+    summary:
+      "Full-stack tracker for part-time and mini-job workers: shifts, paid vacation, and earnings, with a warning before Germany's mini-job limit.",
+    stack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Docker'],
     coverImage: '/images/projects/life-tracker.png',
     liveUrl: 'https://lifetracker-md.vercel.app/',
     githubUrl: 'https://github.com/MD-Moinuddin/life-tracker',
     caseStudy: {
       problem:
-        'Needed a secure, accessible foundation for a personal life-tracking app. V1 focuses on full authentication and a protected shell for future modules - work schedule, fitness, nutrition, and finance - planned for later versions.',
+        "Students and part-time workers in Germany often juggle several jobs, and mini-jobs come with a legal monthly earnings limit. Spreadsheets don't warn you about it and generic shift apps don't know about it. Life Tracker keeps jobs, shifts, and paid leave in one place and shows earned versus planned income, so you can see the limit coming.",
       contribution: [
-        'Built the frontend with React, TypeScript, and Vite, and the backend with Node.js, Express, and TypeScript using a layered Controller-Service-Repository architecture.',
-        'Designed the data layer with PostgreSQL and Prisma ORM.',
-        'Implemented JWT access tokens with httpOnly refresh cookies, bcrypt password hashing, zod validation, and rate limiting, following OWASP-aligned auth practices - generic login error messages, in-memory access tokens instead of localStorage, and silent token refresh.',
-        'Containerized the app with a hardened, multi-stage, non-root Docker build and Docker Compose, with a full CI/CD pipeline via GitHub Actions.',
-        'Covered the app with automated tests (Vitest/Jest) and automated accessibility testing (jest-axe) toward WCAG 2.1 AA compliance.',
+        'Built the frontend with React, TypeScript, Vite, Tailwind CSS, and Zustand, and the backend with Node.js, Express, and Zod using a layered route, controller, service, and repository structure.',
+        'Designed the data layer with PostgreSQL and Prisma: five models with migrations, and money stored as exact decimals.',
+        'Implemented the domain logic: shifts including overnight ones, weekly and monthly earnings, per-job paid vacation with carry-over, and a mini-job earnings-limit warning that never blocks you from adding shifts.',
+        'Secured authentication with short-lived in-memory access tokens, httpOnly refresh cookies, bcrypt hashing, rate limiting, Helmet, and an emailed single-use password-reset flow.',
+        'Fixed a production-only session failure: browsers blocked the cookies between the Vercel and Render domains, so I proxied the API through a Vercel rewrite to keep everything on one origin.',
+        'Built an in-memory demo mode that mirrors the real API, so visitors can try the whole app without signing up.',
+        'Covered the app with unit, component, integration, and accessibility tests (Vitest, Testing Library, Supertest, jest-axe) toward WCAG 2.1 AA, and set up a GitHub Actions pipeline with eight parallel lint, typecheck, test, and build jobs.',
+        'Containerized the stack with Docker Compose and deployed it across Vercel (frontend), Render (API), and Neon (Postgres), with a staging branch ahead of production.',
       ],
       outcome:
-        'Shipped as v1 - a secure, accessible dashboard with full authentication - deployed across Vercel (frontend), Render (backend), and Neon (Postgres), with future life-tracking modules planned.',
+        'Built solo from September to November 2026 and live today, with a "Try the demo" button for visitors. Fitness, nutrition, and finance modules are planned for later versions.',
     },
   },
   {
