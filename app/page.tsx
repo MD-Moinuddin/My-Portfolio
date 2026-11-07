@@ -4,11 +4,13 @@ import { Education } from '@/components/sections/Education';
 import { Skills } from '@/components/sections/Skills';
 import { ProjectsPreview } from '@/components/sections/ProjectsPreview';
 import { Thesis } from '@/components/sections/Thesis';
+import { Recommendations } from '@/components/sections/Recommendations';
 import { Contact } from '@/components/sections/Contact';
 import { experience } from '@/lib/data/experience';
 import { education } from '@/lib/data/education';
 import { skillGroups } from '@/lib/data/skills';
 import { projects } from '@/lib/data/projects';
+import { recommendations } from '@/lib/data/recommendations';
 import { site } from '@/lib/site';
 
 export default function HomePage() {
@@ -20,6 +22,7 @@ export default function HomePage() {
       <Skills groups={skillGroups} />
       <ProjectsPreview projects={projects} limit={4} />
       <Thesis />
+      <Recommendations items={recommendations} />
       <Contact />
     </>
   );
