@@ -8,6 +8,8 @@ export const site = {
   availability: 'Open to Software Engineering & Web Development opportunities',
   url: 'https://md-moinuddin-portfolio.vercel.app',
   email: 'moinuddinmd067@gmail.com',
+  location: { locality: 'Bamberg', country: 'DE' },
+  languages: ['English', 'Bengali', 'German'],
   contactFormAction: 'https://formspree.io/f/mqkvbqlw',
   social: {
     linkedin: 'https://www.linkedin.com/in/md-moinuddin-192057148/',
