@@ -16,6 +16,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Anchor links (nav, hash URLs) stop below the sticky header instead of under it. */
+  scroll-padding-top: 5rem;
 }
 
 body {
