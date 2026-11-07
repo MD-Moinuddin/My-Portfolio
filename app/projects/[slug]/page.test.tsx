@@ -31,6 +31,11 @@ describe('generateMetadata', () => {
     expect(metadata.title).toBe('Emporia');
   });
 
+  it('sets the canonical URL to the project page', async () => {
+    const metadata = await generateMetadata({ params: Promise.resolve({ slug: 'emporia' }) });
+    expect(metadata.alternates?.canonical).toBe('/projects/emporia');
+  });
+
   it('returns empty metadata for an unknown slug', async () => {
     const metadata = await generateMetadata({ params: Promise.resolve({ slug: 'does-not-exist' }) });
     expect(metadata).toEqual({});

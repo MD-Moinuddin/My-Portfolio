@@ -6,6 +6,10 @@ describe('site constants', () => {
     expect(site.url.startsWith('https://')).toBe(true);
   });
 
+  it('uses the real portfolio address', () => {
+    expect(site.url).toBe('https://md-moinuddin-portfolio.vercel.app');
+  });
+
   it('has the correct Formspree endpoint', () => {
     expect(site.contactFormAction).toBe('https://formspree.io/f/mqkvbqlw');
   });

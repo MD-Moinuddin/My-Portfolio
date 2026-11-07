@@ -5,6 +5,7 @@ import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Projects',
+  alternates: { canonical: '/projects' },
   description: `Case studies from ${site.name}'s recent work.`,
 };
 

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Master Thesis',
+  alternates: { canonical: '/thesis' },
   description:
     "Gumti: a full realization of the TARA state-machine replication protocol on Apache Flink, built for my Master's thesis at Otto-Friedrich-Universität Bamberg.",
 };
