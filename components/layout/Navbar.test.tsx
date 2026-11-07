@@ -1,7 +1,17 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { Navbar } from './Navbar';
+
+const nav = vi.hoisted(() => ({ pathname: '/', section: null as string | null }));
+
+vi.mock('next/navigation', () => ({ usePathname: () => nav.pathname }));
+vi.mock('./useActiveSection', () => ({ useActiveSection: () => nav.section }));
+
+beforeEach(() => {
+  nav.pathname = '/';
+  nav.section = null;
+});
 
 function renderNavbar() {
   return render(
@@ -71,5 +81,51 @@ describe('Navbar', () => {
     fireEvent.click(toggle);
     expect(toggle).toHaveAttribute('aria-expanded', 'false');
     expect(list.className).toContain('hidden');
+  });
+
+  describe('active link', () => {
+    const currentLinks = () =>
+      screen.getAllByRole('link').filter((link) => link.getAttribute('aria-current') === 'location');
+
+    it('highlights nothing before any nav section is reached', () => {
+      renderNavbar();
+      expect(currentLinks()).toHaveLength(0);
+    });
+
+    it('highlights the link for the homepage section being read', () => {
+      nav.section = 'skills';
+      renderNavbar();
+      expect(currentLinks().map((link) => link.textContent)).toEqual(['Skills']);
+    });
+
+    it('highlights nothing while reading a section that has no nav link', () => {
+      nav.section = 'recommendations';
+      renderNavbar();
+      expect(currentLinks()).toHaveLength(0);
+    });
+
+    it('marks the active link visually as well as for assistive tech', () => {
+      nav.section = 'contact';
+      renderNavbar();
+      expect(screen.getByRole('link', { name: 'Contact' }).className).toContain('after:scale-x-100');
+      expect(screen.getByRole('link', { name: 'Skills' }).className).toContain('after:scale-x-0');
+    });
+
+    it.each([
+      ['/projects', 'Projects'],
+      ['/projects/emporia', 'Projects'],
+      ['/thesis', 'Thesis'],
+    ])('highlights the matching link on %s', (pathname, label) => {
+      nav.pathname = pathname;
+      renderNavbar();
+      expect(currentLinks().map((link) => link.textContent)).toEqual([label]);
+    });
+
+    it('ignores the scroll position on pages that are not the homepage', () => {
+      nav.pathname = '/projects';
+      nav.section = 'skills';
+      renderNavbar();
+      expect(currentLinks().map((link) => link.textContent)).toEqual(['Projects']);
+    });
   });
 });

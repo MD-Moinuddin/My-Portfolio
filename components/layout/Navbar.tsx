@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { useActiveSection } from './useActiveSection';
 
 // Root-relative hrefs so the section anchors also work from /projects and /projects/[slug].
 const NAV_LINKS = [
@@ -14,11 +16,40 @@ const NAV_LINKS = [
   { href: '/#contact', label: 'Contact' },
 ];
 
-const LINK_STYLES =
-  'relative py-1 opacity-70 transition-opacity after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-accent-text after:transition-transform after:duration-200 hover:opacity-100 hover:after:scale-x-100 dark:after:bg-accent';
+const LINK_BASE =
+  'relative py-1 transition-opacity after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:bg-accent-text after:transition-transform after:duration-200 dark:after:bg-accent';
+const LINK_IDLE = 'opacity-70 after:scale-x-0 hover:opacity-100 hover:after:scale-x-100';
+const LINK_ACTIVE = 'font-medium opacity-100 after:scale-x-100';
+
+// Every homepage section in page order, including ones without a nav link (About, Recommendations).
+// While one of those is on screen, nothing in the nav is highlighted.
+const SECTION_IDS = [
+  'about',
+  'about-me',
+  'experience',
+  'education',
+  'skills',
+  'projects',
+  'thesis',
+  'recommendations',
+  'contact',
+] as const;
+const NAV_SECTION_IDS: ReadonlySet<string> = new Set(NAV_LINKS.map((link) => link.href.replace('/#', '')));
+
+// Which nav link to highlight: the section being read on the homepage, or the matching link when
+// on a page that belongs to one (/projects, /projects/[slug], /thesis).
+function getActiveHref(pathname: string, sectionId: string | null): string | null {
+  if (pathname === '/') return sectionId && NAV_SECTION_IDS.has(sectionId) ? `/#${sectionId}` : null;
+  if (pathname.startsWith('/projects')) return '/#projects';
+  if (pathname === '/thesis') return '/#thesis';
+  return null;
+}
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname() ?? '/';
+  const sectionId = useActiveSection(SECTION_IDS);
+  const activeHref = getActiveHref(pathname, sectionId);
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-paper/90 backdrop-blur dark:border-snow/10 dark:bg-canvas/90">
@@ -40,7 +71,12 @@ export function Navbar() {
           >
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} onClick={() => setOpen(false)} className={LINK_STYLES}>
+                <Link
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={link.href === activeHref ? 'location' : undefined}
+                  className={`${LINK_BASE} ${link.href === activeHref ? LINK_ACTIVE : LINK_IDLE}`}
+                >
                   {link.label}
                 </Link>
               </li>
