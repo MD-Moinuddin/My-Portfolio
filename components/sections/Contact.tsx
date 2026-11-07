@@ -117,20 +117,20 @@ export function Contact() {
 
       <div className="mt-8 grid gap-5 md:grid-cols-[5fr_7fr]">
         <div className="flex flex-col gap-3 rounded-2xl border border-ink/10 bg-white p-5 dark:border-snow/10 dark:bg-white/[0.03]">
-          <div className={`${itemClass} justify-between`}>
+          <div className={`${itemClass} relative`}>
             <a href={`mailto:${site.email}`} className="flex min-w-0 flex-1 items-center gap-3">
               <span className={iconClass}>
                 <EmailIcon />
               </span>
               <span className="min-w-0">
                 <span className="block text-xs opacity-60">Email</span>
-                <span className="block break-all font-semibold">{site.email}</span>
+                <span className="block break-words font-semibold">{site.email}</span>
               </span>
             </a>
             <button
               type="button"
               onClick={copyEmail}
-              className="shrink-0 rounded-full border border-ink/20 px-3 py-1 text-xs transition-colors hover:bg-ink/5 dark:border-snow/20 dark:hover:bg-snow/5"
+              className="absolute right-3 top-1.5 rounded-full border border-ink/20 px-2.5 py-0.5 text-xs transition-colors hover:bg-ink/5 dark:border-snow/20 dark:hover:bg-snow/5"
             >
               {copied ? 'Copied!' : 'Copy'}
             </button>
