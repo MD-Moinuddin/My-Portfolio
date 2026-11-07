@@ -6,7 +6,7 @@ describe('HomePage', () => {
   it('renders every homepage section in order', () => {
     const { container } = render(<HomePage />);
     const sectionIds = Array.from(container.querySelectorAll('section')).map((section) => section.id);
-    expect(sectionIds).toEqual(['about', 'experience', 'education', 'skills', 'projects', 'thesis', 'recommendations', 'contact']);
+    expect(sectionIds).toEqual(['about', 'about-me', 'experience', 'education', 'skills', 'projects', 'thesis', 'recommendations', 'contact']);
   });
 
   it('sets the home page canonical URL', () => {

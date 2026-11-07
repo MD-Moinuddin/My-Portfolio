@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest';
 import { skillGroups } from './skills';
 
 describe('skillGroups', () => {
-  it('has exactly 3 categories', () => {
-    expect(skillGroups).toHaveLength(3);
+  it('has exactly 5 categories', () => {
+    expect(skillGroups).toHaveLength(5);
   });
 
   it('has unique categories', () => {
