@@ -9,13 +9,13 @@ const filledButton =
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="group relative flex h-full gap-4 overflow-hidden rounded-2xl p-4 sm:gap-5 sm:p-5 border border-ink/10 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-text hover:shadow-lg hover:shadow-ink/5 dark:border-snow/10 dark:bg-white/[0.03] dark:hover:border-accent dark:hover:shadow-snow/5">
-      <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-ink/5 sm:h-32 sm:w-32 dark:bg-snow/5">
+    <article className="group relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl p-4 sm:flex-row sm:gap-5 sm:p-5 border border-ink/10 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-text hover:shadow-lg hover:shadow-ink/5 dark:border-snow/10 dark:bg-white/[0.03] dark:hover:border-accent dark:hover:shadow-snow/5">
+      <div className="relative aspect-video w-full shrink-0 self-start overflow-hidden rounded-xl bg-ink/5 sm:w-48 dark:bg-snow/5">
         <Image
           src={project.coverImage}
           alt=""
           fill
-          sizes="128px"
+          sizes="(max-width: 640px) 100vw, 192px"
           className="object-contain"
         />
       </div>
