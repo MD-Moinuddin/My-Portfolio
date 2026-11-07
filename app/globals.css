@@ -21,3 +21,12 @@ html {
 body {
   @apply bg-paper text-ink dark:bg-canvas dark:text-snow;
 }
+
+@keyframes rec-progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
