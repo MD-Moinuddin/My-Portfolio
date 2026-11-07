@@ -421,7 +421,7 @@ export const site = {
   title: 'MD Moinuddin — Frontend Engineer',
   description:
     'Frontend engineer with 4+ years building accessible, production web apps with Angular and React.',
-  url: 'https://md-moinuddin.vercel.app',
+  url: 'https://md-moinuddin-portfolio.vercel.app',
   email: 'moinuddinmd067@gmail.com',
   contactFormAction: 'https://formspree.io/f/mqkvbqlw',
   social: {

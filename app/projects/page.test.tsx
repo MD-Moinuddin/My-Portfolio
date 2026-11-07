@@ -9,6 +9,10 @@ describe('ProjectsPage', () => {
     expect(screen.getAllByRole('article')).toHaveLength(projects.length);
   });
 
+  it('sets the canonical URL to /projects', () => {
+    expect(metadata.alternates?.canonical).toBe('/projects');
+  });
+
   it('sets the page title to "Projects"', () => {
     expect(metadata.title).toBe('Projects');
   });

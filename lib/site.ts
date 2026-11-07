@@ -6,7 +6,7 @@ export const site = {
   tagline:
     'Software engineer with 4+ years of hands-on industry experience and an M.Sc. in International Software System Science from Otto-Friedrich-Universität Bamberg.',
   availability: 'Open to Software Engineering & Web Development opportunities',
-  url: 'https://md-moinuddin.vercel.app',
+  url: 'https://md-moinuddin-portfolio.vercel.app',
   email: 'moinuddinmd067@gmail.com',
   contactFormAction: 'https://formspree.io/f/mqkvbqlw',
   social: {

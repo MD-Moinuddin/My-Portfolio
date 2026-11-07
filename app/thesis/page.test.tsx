@@ -11,6 +11,7 @@ describe('ThesisPage', () => {
 
   it('sets the page title to "Master Thesis"', () => {
     expect(metadata.title).toBe('Master Thesis');
+    expect(metadata.alternates?.canonical).toBe('/thesis');
   });
 
   it('renders the Design, Engineering, and Evaluation contribution bullets', () => {
