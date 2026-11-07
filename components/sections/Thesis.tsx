@@ -36,7 +36,7 @@ export function Thesis() {
               href="/thesis"
               className="rounded-full border border-ink bg-ink px-5 py-2 font-semibold text-paper dark:border-snow dark:bg-snow dark:text-canvas"
             >
-              Read more
+              Read the full thesis
             </Link>
             <a
               href="https://github.com/MD-Moinuddin/Masters-Thesis"

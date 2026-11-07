@@ -123,14 +123,14 @@ export function Contact() {
                 <EmailIcon />
               </span>
               <span className="min-w-0">
-                <span className="block text-xs opacity-60">Email</span>
+                <span className="block text-xs leading-5 opacity-60">Email</span>
                 <span className="block break-words font-semibold">{site.email}</span>
               </span>
             </a>
             <button
               type="button"
               onClick={copyEmail}
-              className="absolute right-3 top-1.5 rounded-full border border-ink/20 px-2.5 py-0.5 text-xs transition-colors hover:bg-ink/5 dark:border-snow/20 dark:hover:bg-snow/5"
+              className="absolute right-3 top-1.5 rounded-full border border-ink/20 px-2.5 py-1 text-xs transition-colors hover:bg-ink/5 dark:border-snow/20 dark:hover:bg-snow/5"
             >
               {copied ? 'Copied!' : 'Copy'}
             </button>

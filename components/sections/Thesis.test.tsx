@@ -22,7 +22,7 @@ describe('Thesis', () => {
 
   it('links to the full thesis page and the GitHub repository', () => {
     render(<Thesis />);
-    expect(screen.getByRole('link', { name: 'Read more' })).toHaveAttribute('href', '/thesis');
+    expect(screen.getByRole('link', { name: 'Read the full thesis' })).toHaveAttribute('href', '/thesis');
     expect(screen.getByRole('link', { name: 'View code' })).toHaveAttribute(
       'href',
       'https://github.com/MD-Moinuddin/Masters-Thesis',
