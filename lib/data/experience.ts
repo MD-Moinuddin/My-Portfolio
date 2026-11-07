@@ -12,9 +12,9 @@ export const experience: ExperienceEntry[] = [
     role: 'Self-Employed',
     startDate: '2026-09',
     highlights: [
-      'Building Life Tracker, a secure, accessible personal dashboard app with React, Node.js, PostgreSQL, and Docker, including JWT authentication and a full CI/CD pipeline via GitHub Actions.',
-      "Followed OWASP-aligned auth practices (in-memory access tokens, httpOnly refresh cookies, bcrypt hashing, rate limiting) and automated accessibility testing with jest-axe toward WCAG 2.1 AA compliance.",
-      'Deployed across Vercel (frontend), Render (backend), and Neon (Postgres) - live at lifetracker-md.vercel.app.',
+      'Built and shipped Life Tracker solo: a full-stack work and earnings tracker for part-time and mini-job workers (React, TypeScript, Node.js, Express, PostgreSQL, Prisma, Docker), live at lifetracker-md.vercel.app with a no-signup demo.',
+      'Implemented secure authentication (in-memory access tokens, httpOnly refresh cookies, bcrypt, rate limiting, emailed single-use password reset) and fixed a production session failure caused by third-party-cookie blocking by proxying the API through a Vercel rewrite.',
+      'Set up CI/CD with GitHub Actions (eight parallel lint, typecheck, test, and build jobs) and automated unit, integration, and accessibility tests toward WCAG 2.1 AA, with deployments on Vercel, Render, and Neon.',
     ],
   },
   {
