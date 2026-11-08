@@ -10,14 +10,9 @@ describe('About', () => {
     expect(screen.getByRole('heading', { level: 2, name: 'About' })).toBeInTheDocument();
   });
 
-  it('shows the portrait with descriptive alt text', () => {
+  it('no longer repeats the portrait, which now lives in the hero', () => {
     render(<About />);
-    expect(screen.getByRole('img', { name: about.photoAlt })).toBeInTheDocument();
-  });
-
-  it('shows an open-to-work badge', () => {
-    render(<About />);
-    expect(screen.getByText('Open to work')).toBeInTheDocument();
+    expect(screen.queryByRole('img')).not.toBeInTheDocument();
   });
 
   it('renders every bio paragraph', () => {

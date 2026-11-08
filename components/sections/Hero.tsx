@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import { RevealOnScroll } from '@/components/RevealOnScroll';
+import { about } from '@/lib/data/about';
 import { site } from '@/lib/site';
 
 const iconLinkClass =
@@ -29,59 +31,75 @@ interface HeroProps {
 
 export function Hero({ name, role, description, availability }: HeroProps) {
   return (
-    <section id="about" className="mx-auto max-w-3xl px-6 pb-16 pt-20">
-      <RevealOnScroll>
-        <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent-text dark:text-accent">
-          <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-accent-text dark:bg-accent" />
-          {role}
-        </p>
-        <h1 className="mt-3 bg-gradient-to-r from-ink to-accent-text bg-clip-text text-4xl font-bold leading-tight tracking-tight text-transparent sm:text-6xl dark:from-snow dark:to-accent">
-          {name}
-        </h1>
-        <div
-          aria-hidden="true"
-          className="mt-5 h-1 w-16 rounded-full bg-gradient-to-r from-accent-text to-accent dark:from-accent dark:to-accent-text"
-        />
-        <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed opacity-80">{description}</p>
-        {availability && (
-          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent-text/30 bg-accent-text/5 px-4 py-1.5 text-sm font-medium text-accent-text dark:border-accent/30 dark:bg-accent/5 dark:text-accent">
-            <span aria-hidden="true" className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-text/60 dark:bg-accent/60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-text dark:bg-accent" />
-            </span>
-            {availability}
+    <section id="about" className="mx-auto max-w-4xl px-6 pb-16 pt-12 md:pt-20">
+      <div className="grid items-center gap-8 md:grid-cols-[1fr_auto] md:gap-12">
+        <RevealOnScroll>
+          <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent-text dark:text-accent">
+            <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-accent-text dark:bg-accent" />
+            {role}
+          </p>
+          <h1 className="mt-3 bg-gradient-to-r from-ink to-accent-text bg-clip-text text-4xl font-bold leading-tight tracking-tight text-transparent sm:text-6xl dark:from-snow dark:to-accent">
+            {name}
+          </h1>
+          <div
+            aria-hidden="true"
+            className="mt-5 h-1 w-16 rounded-full bg-gradient-to-r from-accent-text to-accent dark:from-accent dark:to-accent-text"
+          />
+          <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed opacity-80">{description}</p>
+          {availability && (
+            <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent-text/30 bg-accent-text/5 px-4 py-1.5 text-sm font-medium text-accent-text dark:border-accent/30 dark:bg-accent/5 dark:text-accent">
+              <span aria-hidden="true" className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-text/60 dark:bg-accent/60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-text dark:bg-accent" />
+              </span>
+              {availability}
+            </div>
+          )}
+          <div className="mt-8 flex flex-wrap items-center gap-4 text-sm">
+            <a
+              href="#projects"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 font-semibold text-paper transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-ink/10 dark:bg-snow dark:text-canvas dark:hover:shadow-snow/10"
+            >
+              View projects
+              <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+            <a
+              href={site.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className={iconLinkClass}
+            >
+              <LinkedInIcon />
+            </a>
+            <a
+              href={site.social.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className={iconLinkClass}
+            >
+              <GitHubIcon />
+            </a>
           </div>
-        )}
-        <div className="mt-8 flex flex-wrap items-center gap-4 text-sm">
-          <a
-            href="#projects"
-            className="group inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 font-semibold text-paper transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-ink/10 dark:bg-snow dark:text-canvas dark:hover:shadow-snow/10"
-          >
-            View projects
-            <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">
-              →
-            </span>
-          </a>
-          <a
-            href={site.social.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className={iconLinkClass}
-          >
-            <LinkedInIcon />
-          </a>
-          <a
-            href={site.social.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className={iconLinkClass}
-          >
-            <GitHubIcon />
-          </a>
+        </RevealOnScroll>
+        <div className="max-md:order-first">
+          <RevealOnScroll delay={0.1}>
+            <figure className="relative aspect-[3/4] w-36 overflow-hidden rounded-3xl border border-ink/10 bg-gradient-to-br from-accent-text/25 via-accent/10 to-transparent sm:w-44 md:w-64 dark:border-snow/10 dark:from-accent/25">
+              <Image
+                src={about.photo}
+                alt={about.photoAlt}
+                fill
+                priority
+                sizes="(max-width: 640px) 144px, (max-width: 768px) 176px, 256px"
+                className="object-cover object-top mix-blend-multiply dark:mix-blend-normal dark:brightness-[.82]"
+              />
+            </figure>
+          </RevealOnScroll>
         </div>
-      </RevealOnScroll>
+      </div>
     </section>
   );
 }

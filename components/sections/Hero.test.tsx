@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Hero } from './Hero';
+import { about } from '@/lib/data/about';
 import { site } from '@/lib/site';
 
 describe('Hero', () => {
@@ -17,6 +18,11 @@ describe('Hero', () => {
     expect(screen.queryByRole('link', { name: 'Contact' })).not.toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute('href', site.social.linkedin);
     expect(screen.getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', site.social.github);
+  });
+
+  it('shows the portrait with descriptive alt text', () => {
+    render(<Hero name="Jane Doe" role="Test Engineer" description="A description." />);
+    expect(screen.getByRole('img', { name: about.photoAlt })).toBeInTheDocument();
   });
 
   it('renders the availability badge when provided', () => {

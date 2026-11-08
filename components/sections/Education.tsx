@@ -7,7 +7,7 @@ interface EducationProps {
 
 export function Education({ entries }: EducationProps) {
   return (
-    <section id="education" className="mx-auto max-w-3xl px-6 py-8">
+    <section id="education" className="mx-auto max-w-4xl px-6 py-8">
       <h2 className="text-sm font-semibold uppercase tracking-[0.2em] opacity-60">Education</h2>
       <ol className="mt-8 space-y-10 border-l border-ink/10 pl-6 dark:border-snow/10">
         {entries.map((entry) => (
@@ -19,7 +19,7 @@ export function Education({ entries }: EducationProps) {
               <h3 className="mt-1 text-lg font-semibold">{entry.institution}</h3>
               <p className="mt-0.5 text-sm font-medium text-accent-text dark:text-accent">{entry.degree}</p>
               {entry.highlights && entry.highlights.length > 0 && (
-                <ul className="mt-2 list-disc list-outside space-y-1.5 pl-4 text-sm opacity-80 marker:text-accent-text dark:marker:text-accent">
+                <ul className="mt-2 max-w-3xl list-disc list-outside space-y-1.5 pl-4 text-sm opacity-80 marker:text-accent-text dark:marker:text-accent">
                   {entry.highlights.map((highlight) => (
                     <li key={highlight}>{highlight}</li>
                   ))}
