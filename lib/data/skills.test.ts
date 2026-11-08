@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import { hasSkillIcon } from '@/components/SkillIcon';
 import { skillGroups } from './skills';
 
 describe('skillGroups', () => {
@@ -14,6 +15,12 @@ describe('skillGroups', () => {
   it('gives every category at least one item', () => {
     skillGroups.forEach((group) => {
       expect(group.items.length).toBeGreaterThan(0);
+    });
+  });
+
+  it('has an icon for every skill, so no pill looks different from the rest', () => {
+    skillGroups.flatMap((group) => group.items).forEach((skill) => {
+      expect(hasSkillIcon(skill), `no icon for "${skill}"`).toBe(true);
     });
   });
 });
