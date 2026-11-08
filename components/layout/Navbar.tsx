@@ -26,6 +26,7 @@ const LINK_ACTIVE = 'font-medium opacity-100 after:scale-x-100';
 const SECTION_IDS = [
   'about',
   'about-me',
+  'now',
   'experience',
   'education',
   'skills',

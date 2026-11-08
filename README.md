@@ -3,7 +3,7 @@
 Personal portfolio site for MD Moinuddin, a software engineer based in Bamberg, Germany.
 Live at [md-moinuddin-portfolio.vercel.app](https://md-moinuddin-portfolio.vercel.app/).
 
-A single-page homepage with these sections, in order: Hero, About, Experience, Education, Skills,
+A single-page homepage with these sections, in order: Hero, About, Now, Experience, Education, Skills,
 Selected projects, Master thesis, Recommendations, and Contact. It also has a `/projects` index, a
 case-study page per project, and a `/thesis` page.
 
@@ -47,11 +47,11 @@ Then open [http://localhost:3000](http://localhost:3000).
 app/                    Routes: homepage, /projects, /projects/[slug], /thesis, not-found,
                         sitemap, robots, generated share-preview (Open Graph) images
 components/             Shared components, each with a colocated *.test.tsx
-components/sections/    Hero, About, Experience, Education, Skills, ProjectsPreview, Thesis,
+components/sections/    Hero, About, Now, Experience, Education, Skills, ProjectsPreview, Thesis,
                         Recommendations, Contact
 components/layout/      Navbar, Footer, SkipLink
 lib/site.ts             Site-wide name, URL, email, location, languages, social links
-lib/data/               Content sources: about, experience, education, skills, projects,
+lib/data/               Content sources: about, now, experience, education, skills, projects,
                         recommendations
 lib/og.tsx              Builds the share-preview images
 lib/theme-colors.ts     Color tokens, kept in sync with the @theme block in app/globals.css
@@ -67,6 +67,8 @@ updating the site is mostly a data edit:
   `public/images/projects/`. That is enough to generate its card, its case-study page, its
   share-preview image, and its sitemap entry. The first four projects appear on the homepage.
 - **Experience, education, skills, recommendations:** edit the matching file in `lib/data/`.
+- **"Now" tiles** (what you're building, learning, and looking for): `lib/data/now.ts`. Update its
+  `updated` month whenever you change them, so visitors can see how fresh it is.
 - **About text, photo, and facts** (location, languages, work authorization, availability):
   `lib/data/about.ts` and `public/images/about/`.
 - **CV:** replace `public/cv.pdf`, keeping the same filename.
