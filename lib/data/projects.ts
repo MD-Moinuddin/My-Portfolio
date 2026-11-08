@@ -1,3 +1,18 @@
+export interface ContributionItem {
+  label: string;
+  text: string;
+}
+
+export interface ProjectStat {
+  value: string;
+  label: string;
+}
+
+export interface ProjectScreenshot {
+  src: string;
+  alt: string;
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -7,9 +22,18 @@ export interface Project {
   coverImage: string;
   liveUrl?: string;
   githubUrl?: string;
+  /** Text for the live-site button; defaults to "View live". */
+  liveLabel?: string;
+  /** Short at-a-glance facts shown under the title, e.g. "Solo project". */
+  facts?: string[];
+  /** Verified numbers shown as tiles under the cover image. */
+  stats?: ProjectStat[];
+  /** Extra screenshots shown as a gallery; the section is hidden when empty. */
+  screenshots?: ProjectScreenshot[];
   caseStudy: {
     problem: string;
-    contribution: string[];
+    /** A plain string, or a labelled item whose label is shown in bold. */
+    contribution: (string | ContributionItem)[];
     outcome: string;
   };
 }
@@ -24,19 +48,50 @@ export const projects: Project[] = [
     stack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Docker'],
     coverImage: '/images/projects/life-tracker.png',
     liveUrl: 'https://lifetracker-md.vercel.app/',
+    liveLabel: 'Try the demo',
     githubUrl: 'https://github.com/MD-Moinuddin/life-tracker',
+    facts: ['Solo project', 'Sep to Nov 2026', 'Full-stack web app'],
+    stats: [
+      { value: '8', label: 'parallel CI jobs' },
+      { value: '5', label: 'database models' },
+      { value: '3', label: 'hosting platforms' },
+    ],
     caseStudy: {
       problem:
         "Students and part-time workers in Germany often juggle several jobs, and mini-jobs come with a legal monthly earnings limit. Spreadsheets don't warn you about it and generic shift apps don't know about it. Life Tracker keeps jobs, shifts, and paid leave in one place and shows earned versus planned income, so you can see the limit coming.",
       contribution: [
-        'Built the frontend with React, TypeScript, Vite, Tailwind CSS, and Zustand, and the backend with Node.js, Express, and Zod using a layered route, controller, service, and repository structure.',
-        'Designed the data layer with PostgreSQL and Prisma: five models with migrations, and money stored as exact decimals.',
-        'Implemented the domain logic: shifts including overnight ones, weekly and monthly earnings, per-job paid vacation with carry-over, and a mini-job earnings-limit warning that never blocks you from adding shifts.',
-        'Secured authentication with short-lived in-memory access tokens, httpOnly refresh cookies, bcrypt hashing, rate limiting, Helmet, and an emailed single-use password-reset flow.',
-        'Fixed a production-only session failure: browsers blocked the cookies between the Vercel and Render domains, so I proxied the API through a Vercel rewrite to keep everything on one origin.',
-        'Built an in-memory demo mode that mirrors the real API, so visitors can try the whole app without signing up.',
-        'Covered the app with unit, component, integration, and accessibility tests (Vitest, Testing Library, Supertest, jest-axe) toward WCAG 2.1 AA, and set up a GitHub Actions pipeline with eight parallel lint, typecheck, test, and build jobs.',
-        'Containerized the stack with Docker Compose and deployed it across Vercel (frontend), Render (API), and Neon (Postgres), with a staging branch ahead of production.',
+        {
+          label: 'Architecture',
+          text: 'React, TypeScript, Vite, Tailwind CSS, and Zustand on the frontend; Node.js, Express, and Zod on the backend, with a layered route, controller, service, and repository structure.',
+        },
+        {
+          label: 'Data layer',
+          text: 'PostgreSQL with Prisma: five models with migrations, and money stored as exact decimals.',
+        },
+        {
+          label: 'Domain logic',
+          text: 'shifts including overnight ones, weekly and monthly earnings, per-job paid vacation with carry-over, and a mini-job earnings-limit warning that never blocks you from adding shifts.',
+        },
+        {
+          label: 'Authentication',
+          text: 'short-lived in-memory access tokens, httpOnly refresh cookies, bcrypt hashing, rate limiting, Helmet, and an emailed single-use password-reset flow.',
+        },
+        {
+          label: 'Production fix',
+          text: 'browsers blocked the cookies between the Vercel and Render domains and broke sessions, so I proxied the API through a Vercel rewrite to keep everything on one origin.',
+        },
+        {
+          label: 'Demo mode',
+          text: 'an in-memory API that mirrors the real one, so visitors can try the whole app without signing up.',
+        },
+        {
+          label: 'Testing and CI',
+          text: 'unit, component, integration, and accessibility tests (Vitest, Testing Library, Supertest, jest-axe) toward WCAG 2.1 AA, run by a GitHub Actions pipeline with eight parallel lint, typecheck, test, and build jobs.',
+        },
+        {
+          label: 'Deployment',
+          text: 'Docker Compose locally, then Vercel (frontend), Render (API), and Neon (Postgres), with a staging branch ahead of production.',
+        },
       ],
       outcome:
         'Built solo from September to November 2026 and live today, with a "Try the demo" button for visitors. Fitness, nutrition, and finance modules are planned for later versions.',
@@ -210,4 +265,10 @@ export const projects: Project[] = [
 
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((project) => project.slug === slug);
+}
+
+export function getAdjacentProjects(slug: string): { previous?: Project; next?: Project } {
+  const index = projects.findIndex((project) => project.slug === slug);
+  if (index === -1) return {};
+  return { previous: projects[index - 1], next: projects[index + 1] };
 }
