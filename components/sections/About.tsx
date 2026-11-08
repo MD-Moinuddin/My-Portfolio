@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { RevealOnScroll } from '@/components/RevealOnScroll';
 import { about } from '@/lib/data/about';
@@ -54,39 +53,22 @@ export function About() {
   const [lead, ...rest] = about.bio;
 
   return (
-    <section id="about-me" className="mx-auto max-w-3xl px-6 py-8">
+    <section id="about-me" className="mx-auto max-w-4xl px-6 py-8">
       <h2 className="text-sm font-semibold uppercase tracking-[0.2em] opacity-60">About</h2>
       <RevealOnScroll>
-        <div className="mt-8 grid gap-4 md:grid-cols-[4fr_8fr]">
-          <figure
-            className={`${tileClass} relative mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden bg-gradient-to-br from-accent-text/25 via-accent/10 to-transparent md:mx-0 md:aspect-auto md:max-w-none dark:from-accent/25`}
-          >
-            <Image
-              src={about.photo}
-              alt={about.photoAlt}
-              fill
-              sizes="(max-width: 768px) 320px, 300px"
-              className="object-cover object-top mix-blend-multiply dark:mix-blend-normal dark:brightness-[.82]"
-            />
-            <span className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full border border-accent-text/30 bg-white/80 px-3 py-1 text-xs font-medium text-accent-text backdrop-blur dark:border-accent/30 dark:bg-canvas/90 dark:text-accent">
-              <span aria-hidden="true" className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-text/60 dark:bg-accent/60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-text dark:bg-accent" />
-              </span>
-              Open to work
-            </span>
-          </figure>
-
-          <div className={`${tileClass} flex flex-col justify-center p-6`}>
-            <p className="font-medium leading-relaxed">{lead}</p>
-            {rest.map((paragraph) => (
-              <p key={paragraph} className="mt-4 text-sm leading-relaxed opacity-80">
-                {paragraph}
-              </p>
-            ))}
+        <div className="mt-8 grid gap-4">
+          <div className={`${tileClass} p-6 md:p-8`}>
+            <div className="max-w-3xl">
+              <p className="text-lg font-medium leading-relaxed">{lead}</p>
+              {rest.map((paragraph) => (
+                <p key={paragraph} className="mt-4 leading-relaxed opacity-80">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
 
-          <dl className="grid gap-4 sm:grid-cols-2 md:col-span-2">
+          <dl className="grid gap-4 sm:grid-cols-2">
             {about.facts.map((fact) => (
               <div key={fact.label} className={`${tileClass} flex items-start gap-3 p-4`}>
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-text/10 text-accent-text dark:bg-accent/15 dark:text-accent">

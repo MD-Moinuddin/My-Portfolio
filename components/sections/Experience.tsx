@@ -7,7 +7,7 @@ interface ExperienceProps {
 
 export function Experience({ entries }: ExperienceProps) {
   return (
-    <section id="experience" className="mx-auto max-w-3xl px-6 py-8">
+    <section id="experience" className="mx-auto max-w-4xl px-6 py-8">
       <h2 className="text-sm font-semibold uppercase tracking-[0.2em] opacity-60">Experience</h2>
       <ol className="mt-8 space-y-10 border-l border-ink/10 pl-6 dark:border-snow/10">
         {entries.map((entry) => (
@@ -20,7 +20,7 @@ export function Experience({ entries }: ExperienceProps) {
                   {entry.company}
                 </span>
               </h3>
-              <ul className="mt-2 list-disc list-outside space-y-1.5 pl-4 text-sm opacity-80 marker:text-accent-text dark:marker:text-accent">
+              <ul className="mt-2 max-w-3xl list-disc list-outside space-y-1.5 pl-4 text-sm opacity-80 marker:text-accent-text dark:marker:text-accent">
                 {entry.highlights.map((highlight) => (
                   <li key={highlight}>{highlight}</li>
                 ))}

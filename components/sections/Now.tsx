@@ -40,7 +40,7 @@ const ICONS: Record<NowIcon, ReactNode> = {
 
 export function Now() {
   return (
-    <section id="now" className="mx-auto max-w-3xl px-6 py-8">
+    <section id="now" className="mx-auto max-w-4xl px-6 py-8">
       <div className="flex flex-wrap items-baseline justify-between gap-x-4">
         <h2 className="text-sm font-semibold uppercase tracking-[0.2em] opacity-60">Now</h2>
         <p className="text-xs opacity-60">Updated {formatUpdated(now.updated)}</p>

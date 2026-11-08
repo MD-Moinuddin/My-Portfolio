@@ -88,7 +88,7 @@ export function Recommendations({ items, autoplayMs = 7000 }: RecommendationsPro
   const paused = hovered || !inView;
 
   return (
-    <section ref={sectionRef} id="recommendations" className="mx-auto max-w-3xl px-6 py-16">
+    <section ref={sectionRef} id="recommendations" className="mx-auto max-w-4xl px-6 py-16">
       <h2 className="text-sm font-semibold uppercase tracking-[0.2em] opacity-60">Recommendations</h2>
 
       <div
@@ -124,7 +124,7 @@ export function Recommendations({ items, autoplayMs = 7000 }: RecommendationsPro
                   <span className="self-start rounded-full bg-accent-text/10 px-3 py-1 text-xs font-semibold text-accent-text dark:bg-accent/15 dark:text-accent">
                     {item.relationship} · {item.date}
                   </span>
-                  <blockquote className="mt-4 space-y-3 text-base leading-relaxed sm:text-lg">
+                  <blockquote className="mt-4 max-w-3xl space-y-3 text-base leading-relaxed sm:text-lg">
                     {item.quote.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}

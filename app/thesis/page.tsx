@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ThesisPage() {
   return (
-    <article className="mx-auto max-w-3xl px-6 py-16">
+    <article className="mx-auto max-w-4xl px-6 py-16">
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-text dark:text-accent">
         Master Thesis · Otto-Friedrich-Universität Bamberg
       </p>
@@ -18,7 +18,7 @@ export default function ThesisPage() {
         A full realization of the TARA state-machine replication protocol as a distributed Apache Flink job.
       </p>
 
-      <div className="mt-10 space-y-8">
+      <div className="mt-10 max-w-3xl space-y-8">
         <section>
           <h2 className="text-sm font-semibold uppercase tracking-wide opacity-60">Overview</h2>
           <p className="mt-2 leading-relaxed">

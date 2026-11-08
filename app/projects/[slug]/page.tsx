@@ -39,7 +39,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const { previous, next } = getAdjacentProjects(project.slug);
 
   return (
-    <article className="mx-auto max-w-3xl px-6 py-16">
+    <article className="mx-auto max-w-4xl px-6 py-16">
       <Link href="/projects" className="text-sm opacity-70 transition-opacity hover:opacity-100">
         <span aria-hidden="true">← </span>All projects
       </Link>
@@ -94,7 +94,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </dl>
       )}
 
-      <div className="mt-10 space-y-8">
+      <div className="mt-10 max-w-3xl space-y-8">
         <section>
           <h2 className="text-sm font-semibold uppercase tracking-wide opacity-60">Problem</h2>
           <p className="mt-2 leading-relaxed">{project.caseStudy.problem}</p>
