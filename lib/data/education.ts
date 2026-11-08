@@ -1,26 +1,35 @@
 export interface EducationEntry {
   institution: string;
   degree: string;
+  /** Letters shown in the avatar; defaults to the institution's initials. */
+  initials?: string;
   location: string;
   startDate: string;
   endDate?: string;
   highlights?: string[];
   grade?: string;
   thesisGrade?: string;
+  /** Subjects studied, shown as tags. Optional: add them here to show them on the card. */
+  subjects?: string[];
+  /** An optional link shown at the bottom of the card. */
+  link?: { label: string; href: string };
 }
 
 export const education: EducationEntry[] = [
   {
     institution: 'Otto-Friedrich-Universität Bamberg',
+    initials: 'UB',
     degree: 'Master of Science (MS), International Software System Science',
     location: 'Bamberg, Germany',
     startDate: '2022-04',
     endDate: '2026-08',
     grade: 'Grade: 2.7 (1.0 is highest)',
     thesisGrade: 'Thesis grade: 2.1 (1.0 is highest)',
+    link: { label: 'Read about my thesis', href: '/thesis' },
   },
   {
     institution: 'American International University-Bangladesh',
+    initials: 'AI',
     degree: 'Bachelor of Science (BS), Computer Science and Software Engineering',
     location: 'Dhaka, Bangladesh',
     startDate: '2014-01',

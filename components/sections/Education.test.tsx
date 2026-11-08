@@ -55,4 +55,26 @@ describe('Education', () => {
     expect(screen.queryByText(/is highest/)).not.toBeInTheDocument();
     expect(container.textContent).not.toContain('Grade');
   });
+
+  it('shows avatar initials, derived or explicit', () => {
+    const { container } = render(
+      <Education entries={[entries[0], { ...entries[1], initials: 'BX' }]} />,
+    );
+    expect(container.textContent).toContain('AU');
+    expect(container.textContent).toContain('BX');
+  });
+
+  it('lists the subjects studied when given, and omits the section otherwise', () => {
+    const { rerender } = render(<Education entries={[{ ...entries[0], subjects: ['Algorithms', 'Databases'] }]} />);
+    expect(screen.getByText('Subjects')).toBeInTheDocument();
+    expect(screen.getByText('Algorithms')).toBeInTheDocument();
+    expect(screen.getByText('Databases')).toBeInTheDocument();
+    rerender(<Education entries={[entries[0]]} />);
+    expect(screen.queryByText('Subjects')).toBeNull();
+  });
+
+  it('shows an optional link at the bottom of a card', () => {
+    render(<Education entries={[{ ...entries[0], link: { label: 'Read about my thesis', href: '/thesis' } }]} />);
+    expect(screen.getByRole('link', { name: /Read about my thesis/ })).toHaveAttribute('href', '/thesis');
+  });
 });

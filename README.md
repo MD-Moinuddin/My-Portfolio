@@ -66,7 +66,13 @@ updating the site is mostly a data edit:
 - **New project:** add an entry to `lib/data/projects.ts` and a screenshot to
   `public/images/projects/`. That is enough to generate its card, its case-study page, its
   share-preview image, and its sitemap entry. The first four projects appear on the homepage.
-- **Experience, education, skills, recommendations:** edit the matching file in `lib/data/`.
+- **Experience:** `lib/data/experience.ts`. Each role can list `tech` (shown as tags), set `earlier: true`
+  to tuck it under "Earlier experience", and wrap a number in `**double asterisks**` to highlight it.
+- **Education:** `lib/data/education.ts`. Add `subjects: ['…']` to a degree to list its subjects on the card.
+- **Skills:** `lib/data/skills.ts`. Every skill is shown equally, grouped into cards. A new skill needs an
+  icon: add its logo path to `lib/skill-icons.ts` (copy the path from simpleicons.org) or a line icon to
+  `components/SkillIcon.tsx`. A test fails if a skill has no icon.
+- **Recommendations:** `lib/data/recommendations.ts`.
 - **"Now" tiles** (what you're building, learning, and looking for): `lib/data/now.ts`. Update its
   `updated` month whenever you change them, so visitors can see how fresh it is.
 - **About text, photo, and facts** (location, languages, work authorization, availability):
