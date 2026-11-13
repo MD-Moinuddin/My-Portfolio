@@ -1,6 +1,17 @@
-import { describe, it, expect } from 'vitest';
-import { render, screen, within } from '@testing-library/react';
+import { beforeAll, describe, it, expect } from 'vitest';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import ThesisPage, { metadata } from './page';
+
+// jsdom does not implement the <dialog> methods.
+beforeAll(() => {
+  HTMLDialogElement.prototype.showModal = function showModal() {
+    this.setAttribute('open', '');
+  };
+  HTMLDialogElement.prototype.close = function close() {
+    this.removeAttribute('open');
+    this.dispatchEvent(new Event('close'));
+  };
+});
 
 describe('ThesisPage', () => {
   it('renders the thesis title and overview', () => {
@@ -61,6 +72,23 @@ describe('ThesisPage', () => {
     for (const figure of figures) {
       expect(within(figure).getByRole('img')).toHaveAttribute('alt');
     }
+  });
+
+  it('opens a figure in a pop-up on the same page and closes it again', () => {
+    render(<ThesisPage />);
+    // No figure is a link that leaves the page.
+    for (const figure of screen.getAllByRole('figure')) {
+      expect(within(figure).queryByRole('link')).toBeNull();
+    }
+    const figure = screen.getAllByRole('figure')[0];
+    fireEvent.click(within(figure).getByRole('button', { name: /Enlarge image/ }));
+    const dialog = figure.querySelector('dialog') as HTMLDialogElement;
+    expect(dialog).toHaveAttribute('open');
+    expect(document.body.style.overflow).toBe('hidden');
+    expect(within(dialog).getByRole('img')).toBeInTheDocument();
+    fireEvent.click(within(dialog).getByRole('button', { name: 'Close' }));
+    expect(dialog).not.toHaveAttribute('open');
+    expect(document.body.style.overflow).toBe('');
   });
 
   it('links to the thesis PDF and the GitHub repository', () => {

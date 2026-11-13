@@ -382,7 +382,7 @@ export default function ThesisPage() {
         </div>
         <p className="mt-4 text-sm opacity-75">
           Each chart plots latency against throughput for empty and 5 KB payloads, in all four send and receive
-          combinations. Click a chart to open it full size.
+          combinations. Click a chart to enlarge it.
         </p>
       </section>
 
