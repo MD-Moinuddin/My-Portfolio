@@ -55,7 +55,7 @@ lib/data/               Content sources: about, now, experience, education, skil
                         recommendations
 lib/og.tsx              Builds the share-preview images
 lib/theme-colors.ts     Color tokens, kept in sync with the @theme block in app/globals.css
-public/                 cv.pdf, the portrait, and project screenshots
+public/                 cv.pdf, thesis.pdf, the portrait, and project and thesis images
 ```
 
 ## Content
@@ -78,6 +78,8 @@ updating the site is mostly a data edit:
 - **About text, photo, and facts** (location, languages, work authorization, availability):
   `lib/data/about.ts` and `public/images/about/`.
 - **CV:** replace `public/cv.pdf`, keeping the same filename.
+- **Thesis page:** `app/thesis/page.tsx` holds its text (stats, steps, contribution cards). The thesis PDF is
+  `public/thesis.pdf` and its figures are in `public/images/thesis/`.
 
 ## Under the hood
 
